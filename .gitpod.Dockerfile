@@ -2,5 +2,12 @@ FROM gitpod/workspace-full
                     
 USER gitpod
 
-RUN sudo curl -L https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl -o /usr/local/bin/kubectl && \
-    sudo chmod 0755 /usr/local/bin/kubectl
+RUN cd /tmp && \
+  curl -LO https://releases.hashicorp.com/terraform/0.12.24/terraform_0.12.24_linux_amd64.zip && \
+  unzip terraform_0.12.24_linux_amd64.zip && \
+  rm terraform_0.12.24_linux_amd64.zip && \
+  chmod 0755 terraform && \
+  sudo mv terraform /usr/local/bin && \
+  curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl && \
+  chmod 0755 kubectl && \
+  sudo mv kubectl /usr/local/bin
