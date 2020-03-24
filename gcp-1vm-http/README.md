@@ -29,7 +29,7 @@ gce_project = "teste-123456"
 gce_region = "southamerica-east1"
 gce_zone = "southamerica-east1-a"
 gce_ssh_user = "boidacarapreta"
-gce_ssh_pub_key_file = "ssh-rsa AAA...xWQ== ederson@boidacarapreta.cc"
+gce_ssh_pub_key = "ssh-rsa AAA...xWQ== ederson@boidacarapreta.cc"
 ```
 
 ## Como usar
