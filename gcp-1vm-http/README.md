@@ -50,4 +50,4 @@ O retorno será o IPv4 para se conectar via SSH.
 
 ## Nota
 
-A configuração do Terraform, `gcp.tf`, é compatível com versão 0.12 ou superior.
+A configuração do Terraform, `gcp.tf`, é compatível com [versão 0.12 ou superior](https://www.terraform.io/docs/configuration/).
