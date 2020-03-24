@@ -6,7 +6,7 @@ Para usar, é preciso criar o arquivo de variáveis do Terraform, no seguinte fo
 
 ```
 gcp_sakey = "***"
-gce_project = "******"
+gce_project = "***"
 gce_region = "***"
 gce_zone = "***"
 gce_ssh_user = "***"
