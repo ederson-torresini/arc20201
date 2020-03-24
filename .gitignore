@@ -1,3 +1,10 @@
+# Google Cloud
+gcp.json
+
+# Terraform
+*.tfvars
+.terraform/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
