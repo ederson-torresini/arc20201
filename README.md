@@ -2,4 +2,8 @@
 
 # gitpod-io
 
-Modelo de repositório para uso do Google Cloud.
+Repositório com modelos para uso do Google Cloud.
+
+## gcp-1vm-http
+
+Modelo com Terraform para criação de uma máquina virtual com acesso a HTTP/HTTPS.

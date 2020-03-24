@@ -4,7 +4,7 @@ gcp.json
 # Terraform
 *.tfvars
 .terraform/
-terraform.tfstate*
+*terraform.tfstate*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

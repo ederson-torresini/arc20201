@@ -1,4 +1,4 @@
-all: init plan apply show
+create: init plan apply show
 
 file = "gcp.tfvars"
 
@@ -14,5 +14,5 @@ apply: plan
 show:
 	terraform show
 
-clean:
+destroy:
 	terraform destroy -var-file=$(file)

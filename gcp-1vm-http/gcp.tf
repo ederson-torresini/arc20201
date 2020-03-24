@@ -3,7 +3,7 @@ variable "gce_project" {}
 variable "gce_region" {}
 variable "gce_zone" {}
 variable "gce_ssh_user" {}
-variable "gce_ssh_pub_key_file" {}
+variable "gce_ssh_pub_key" {}
 
 // https://www.terraform.io/docs/providers/google/index.html
 provider "google" {
@@ -48,7 +48,7 @@ resource "google_compute_instance" "web-0" {
   }
 
   metadata = {
-    ssh-keys = "${var.gce_ssh_user}:${var.gce_ssh_pub_key_file}"
+    ssh-keys = "${var.gce_ssh_user}:${var.gce_ssh_pub_key}"
   }
 
   network_interface {
