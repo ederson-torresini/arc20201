@@ -11,7 +11,7 @@ RUN cd /tmp && \
   curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl && \
   chmod 0755 kubectl && \
   sudo mv kubectl /usr/local/bin && \
-  apt-get update && \
-  apt-get -y install dnsutils && \
-  apt-get clean && \
-  apt-get autoremove
+  sudo apt-get update && \
+  sudo apt-get -y install dnsutils && \
+  sudo apt-get clean && \
+  sudo apt-get autoremove
