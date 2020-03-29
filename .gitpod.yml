@@ -1,3 +1,5 @@
+image:
+  file: .gitpod.Dockerfile
 github:
   prebuilds:
     master: true
@@ -13,5 +15,3 @@ vscode:
     - eamodio.gitlens@10.2.0:GNDO73Cmp0fYDiLNxVkbsQ==
     - mauve.terraform@1.4.0:27r9VdcnEIBpa1jdjPSXdA==
     - googlecloudtools.cloudcode@1.2.0:QbzxEadBEt9Loc2glDBysQ==
-image:
-  file: .gitpod.Dockerfile
