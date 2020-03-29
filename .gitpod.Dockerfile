@@ -5,8 +5,6 @@ USER gitpod
 RUN cd /tmp && \
   apt-get update && \
   apt-get -y install dnsutils && \
-  apt-get clean && \
-  apt-get -y autoremove && \
   rm -rf /tmp/* /var/tmp/* /var/cache/apk/* && \
   curl -LO https://releases.hashicorp.com/terraform/0.12.24/terraform_0.12.24_linux_amd64.zip && \
   unzip terraform_0.12.24_linux_amd64.zip && \
