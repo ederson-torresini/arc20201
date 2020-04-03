@@ -12,6 +12,6 @@ RUN cd /tmp && \
   chmod 0755 kubectl && \
   sudo mv kubectl /usr/local/bin && \
   sudo apt-get update && \
-  sudo apt-get -y install dnsutils && \
+  sudo apt-get -y install dnsutils bind9 && \
   sudo apt-get clean && \
   sudo apt-get autoremove
