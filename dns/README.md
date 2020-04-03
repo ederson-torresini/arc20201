@@ -62,3 +62,16 @@ Logo, para fazer a consulta do registro `SOA` do domínio `ifsc.edu.br`, a consu
 ```bash
 dig -p 1053 @127.0.0.1 SOA ifsc.edu.br
 ```
+
+## `tl;dr`
+
+1. Abra dois terminais no Gitpod.
+2. No primeiro terminal digite:
+```bash
+named -4 -c /workspace/gitpod-io/dns/named.conf -g
+```
+3. Aparecerão duas mensagens no canto inferior direito do Gitpod. Feche as duas no "X".
+4. No segundo terminal faça as consultas, como por exemplo o registro `SOA` do domínio `ifsc.edu.br`:
+```bash
+dig -p 1053 @127.0.0.1 SOA ifsc.edu.br
+```
