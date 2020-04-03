@@ -71,7 +71,9 @@ dig -p 1053 @127.0.0.1 SOA ifsc.edu.br
 named -4 -c /workspace/gitpod-io/dns/named.conf -g
 ```
 3. Aparecerão duas mensagens no canto inferior direito do Gitpod. Feche as duas no "X".
-4. No segundo terminal faça as consultas, como por exemplo o registro `SOA` do domínio `ifsc.edu.br`:
+4. No segundo terminal faça as consultas, como por exemplo os registros `SOA` e `NS` do domínio (interno, não público) `sje.interno`, bem como o endereço IPv4 do servidor `www`:
 ```bash
-dig -p 1053 @127.0.0.1 SOA ifsc.edu.br
+dig -p 1053 @127.0.0.1 SOA sje.interno
+dig -p 1053 @127.0.0.1 NS sje.interno
+dig -p 1053 @127.0.0.1 A www.sje.interno
 ```
