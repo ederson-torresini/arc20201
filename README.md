@@ -1,9 +1,9 @@
-[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/boidacarapreta/gitpod-io) 
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/boidacarapreta/arc20201)
 
-# gitpod-io
+# ARC 2020.1
 
-Repositório com modelos para uso do Google Cloud.
+Prototipação com Gitpod para serviços como DNS e HTTP.
 
-## gcp-1vm-http
+## DNS
 
-Modelo com Terraform para criação de uma máquina virtual com acesso a HTTP/HTTPS.
+Servidor com Bind9 e clientes `dig` e em Python.
