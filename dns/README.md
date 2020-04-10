@@ -6,7 +6,7 @@ Rodar um servidor DNS no Gitpod requer algumas modificações do padrão esperad
 
 Para rodar o servidor, o comando a ser executado é:
 ```bash
-named -4 -c /workspace/gitpod-io/dns/named.conf -g
+named -4 -c /workspace/arc20201/dns/named.conf -g
 ```
 Ou para quem já está com o terminal dentro deste diretório (`dns`):
 ```bash
@@ -26,7 +26,7 @@ O RNDC permite o controle do servidor DNS. Ao invés de parar todo o servidor, p
 
 Pode ser executado da seguinte forma:
 ```bash
-rndc -c /workspace/gitpod-io/dns/rndc.conf <comando>
+rndc -c /workspace/arc20201/dns/rndc.conf <comando>
 ```
 Ou, para quem já está com o terminal dentro deste diretório (`dns`):
 ```bash
@@ -42,7 +42,7 @@ Os comandos para os experimentos básicos mais indicados são:
 
 Exemplo de uso do comando `status`: 
 ```bash
-rndc -c /workspace/gitpod-io/dns/rndc.conf status
+rndc -c /workspace/arc20201/dns/rndc.conf status
 ```
 Ou, para quem já está com o terminal dentro deste diretório (`dns`):
 ```bash
@@ -68,12 +68,12 @@ dig -p 1053 @127.0.0.1 SOA ifsc.edu.br
 1. Abra dois terminais no Gitpod.
 2. No primeiro terminal digite:
 ```bash
-named -4 -c /workspace/gitpod-io/dns/named.conf -g
+named -4 -c /workspace/arc20201/dns/named.conf -g
 ```
 3. Aparecerão duas mensagens no canto inferior direito do Gitpod. Feche as duas no "X".
-4. No segundo terminal faça as consultas, como por exemplo os registros `SOA` e `NS` do domínio (interno, não público) `sje.interno`, bem como o endereço IPv4 do servidor `www`:
+4. No segundo terminal faça as consultas, como por exemplo os registros `SOA` e `NS` do domínio (interno, não público) `ederson.torresini`, bem como o endereço IPv4 do servidor `www`:
 ```bash
-dig -p 1053 @127.0.0.1 SOA sje.interno
-dig -p 1053 @127.0.0.1 NS sje.interno
-dig -p 1053 @127.0.0.1 A www.sje.interno
+dig -p 1053 @127.0.0.1 SOA ederson.torresini
+dig -p 1053 @127.0.0.1 NS ederson.torresini
+dig -p 1053 @127.0.0.1 A www.ederson.torresini
 ```
