@@ -6,7 +6,7 @@ Este projeto se refere a um servidor HTTP de conteúdo estático usando Python 3
 
 ### Etapa 1: instalar os módulos
 
-Como boa prática em Python, recomenda-se usar o arquivo `requirements.txt` para informar todos os módulos necessários para o projeto. Para o servidor HTTP, apenas o módulo `flask` é necessário, conforme o arquivo.
+Como boa prática em Python, recomenda-se usar o arquivo `requirements.txt` para informar todos os módulos necessários para o projeto. Para o servidor HTTP, apenas o módulo `flask` é necessário.
 
 No Gitpod a instalação dos módulos é facilitada com o módulo `pip` (já instalado previamente no Gitpod):
 
