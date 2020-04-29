@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Servidor HTTP",
+      "type": "python",
+      "request": "launch",
+      "module": "flask",
+      "env": {
+        "FLASK_APP": "${workspaceFolder}/http/servidor"
+      },
+      "args": [
+        "run",
+        "--no-debugger",
+        "--no-reload" // Remove to auto-reload modified pages
+      ]
+    }
+  ]
+}
