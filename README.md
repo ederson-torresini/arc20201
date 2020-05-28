@@ -2,8 +2,12 @@
 
 # ARC 2020.1
 
-Prototipação com Gitpod para serviços como DNS e HTTP.
+Prototipação com Gitpod para serviços em geral.
 
 ## DNS
 
 Servidor com Bind9 e clientes `dig` e em Python.
+
+## HTTP
+
+Servidor HTTP com Python e Flask. Para facilitar a depuração, foi criado um lançador (_launcher_) deste servidor.

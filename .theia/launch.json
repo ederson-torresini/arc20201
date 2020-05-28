@@ -12,7 +12,7 @@
       "args": [
         "run",
         "--no-debugger",
-        "--no-reload" // Remove to auto-reload modified pages
+        "--no-reload"
       ]
     }
   ]
