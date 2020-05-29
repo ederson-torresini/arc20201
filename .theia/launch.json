@@ -9,11 +9,14 @@
       "env": {
         "FLASK_APP": "${workspaceFolder}/http/servidor"
       },
-      "args": [
-        "run",
-        "--no-debugger",
-        "--no-reload"
-      ]
+      "args": ["run", "--no-debugger", "--no-reload"]
+    },
+    {
+      "name": "Python: cliente TSDB",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/tsdb/cliente-influxdata.py",
+      "console": "integratedTerminal"
     }
   ]
 }

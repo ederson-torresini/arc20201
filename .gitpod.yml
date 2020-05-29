@@ -13,8 +13,9 @@ ports:
   - port: 5000
     onOpen: open-preview
 tasks:
-  - init: cd http && pip3 install -r requirements.txt
+  - init: pip3 install -r requirements.txt -r dns/requirements.txt -r http/requirements.txt -r tsdb/requirements.txt
 vscode:
   extensions:
-    - esbenp.prettier-vscode@2.3.0:1F0Pvb/ORZ/T+b60LIMs8w==
     - eamodio.gitlens@10.2.0:GNDO73Cmp0fYDiLNxVkbsQ==
+    - esbenp.prettier-vscode@2.3.0:1F0Pvb/ORZ/T+b60LIMs8w==
+    - humao.rest-client@0.23.0:JNawNa9Juht3Bl5xY2refg==
