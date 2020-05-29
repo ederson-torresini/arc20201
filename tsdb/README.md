@@ -1,6 +1,6 @@
 # Passo zero (antes de criar o Gitpod)
 
-Antes de criar o Gitpod, é preciso criar as seguintes variáveis de ambiente no Gitpod:
+Antes de criar o Gitpod, é preciso criar as seguintes [variáveis de ambiente no Gitpod](https://gitpod.io/settings/):
 
 | Name | Value | Organization/Repository |
 |---|---|---|
