@@ -5,6 +5,6 @@ Authorization: Token {{$processEnv INFLUXDB_TOKEN}}
 Content-Type: application/octet-stream
 Accept: application/json
 
-ideia,local=casa,personagem=Lola,ação=brincando latitude=-27.6084177,longitude=-48.6354691,altitude=80
+ideia,local=quarto,personagem=Lola,acao=curiosa latitude=-27.6084177,longitude=-48.6354691,altitude=80
 
 ###
