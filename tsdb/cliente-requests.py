@@ -17,4 +17,4 @@ dados = "ideia,local=quarto,personagem=Lola,acao=curiosa latitude=-27.6084177,lo
 
 # Criar os objetos da consulta e realizar, de fato, a operação de escrita no banco de dados
 req = post(url, headers=cabeçalhos, data=dados)
-print(req.status_code)
+print("Código de retorno: {}.".format(req.status_code))
