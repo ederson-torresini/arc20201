@@ -1,10 +1,21 @@
 # https://v2.docs.influxdata.com/v2.0/reference/api/
 
-POST {{$processEnv INFLUXDB_BASEURL}}/api/v2/write?org={{$processEnv INFLUXDB_ORG}}&bucket={{$processEnv INFLUXDB_BUCKET}}
-Authorization: Token {{$processEnv INFLUXDB_TOKEN}}
-Content-Type: application/octet-stream
+POST http://localhost:5000/gravar
+Content-Type: application/json
 Accept: application/json
 
-ideia,local=quarto,personagem=Lola,acao=curiosa latitude=-27.6084177,longitude=-48.6354691,altitude=80
+{
+    "campo": "ideias",
+    "marcadores": [
+        {"local": "quarto"},
+        {"personagem": "Lola"},
+        {"acao": "curiosa"}
+    ],
+    "posicao": [
+        {"latitude": -27.6084177},
+        {"longitude": -48.6354691},
+        {"altitude": 80}
+    ]
+}
 
 ###
