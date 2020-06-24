@@ -5,7 +5,7 @@ Content-Type: application/json
 Accept: application/json
 
 {
-    "campo": "ideias",
+    "campo": "ideia",
     "marcadores": [
         {"local": "quarto"},
         {"personagem": "Lola"},
