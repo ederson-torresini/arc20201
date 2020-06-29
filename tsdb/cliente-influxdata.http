@@ -1,17 +1,171 @@
-# https://v2.docs.influxdata.com/v2.0/reference/api/
+###
 
+# Requisição válida
 POST http://localhost:5000/gravar
 Content-Type: application/json
 Accept: application/json
 
 {
-    "campo": "ideia",
+    "medida": "ideia",
     "marcadores": [
         {"local": "quarto"},
         {"personagem": "Lola"},
         {"acao": "curiosa"}
     ],
-    "posicao": [
+    "valores": [
+        {"latitude": -27.6084177},
+        {"longitude": -48.6354691},
+        {"altitude": 80}
+    ]
+}
+
+###
+
+# Requisição inválida: cabeçalho não menciona formato
+POST http://localhost:5000/gravar
+Accept: application/json
+
+{
+    "medida": "ideia",
+    "marcadores": [
+        {"local": "quarto"},
+        {"personagem": "Lola"},
+        {"acao": "curiosa"}
+    ],
+    "valores": [
+        {"latitude": -27.6084177},
+        {"longitude": -48.6354691},
+        {"altitude": 80}
+    ]
+}
+
+###
+
+# Requisição inválida: JSON com formato errado
+POST http://localhost:5000/gravar
+Content-Type: application/json
+Accept: application/json
+
+{
+    "medida": "ideia",
+    "marcadores": [
+        {"local": "quarto"},
+        {"personagem": "Lola"},
+        {"acao": "curiosa"}
+    ],
+    "valores": [
+        {"latitude": -27.6084177},
+        {"longitude": -48.6354691},
+        {"altitude": 80}
+    ]
+
+###
+
+# Requisição inválida: falta 'medida'
+POST http://localhost:5000/gravar
+Content-Type: application/json
+Accept: application/json
+
+{
+    "marcadores": [
+        {"local": "quarto"},
+        {"personagem": "Lola"},
+        {"acao": "curiosa"}
+    ],
+    "valores": [
+        {"latitude": -27.6084177},
+        {"longitude": -48.6354691},
+        {"altitude": 80}
+    ]
+}
+
+###
+
+# Requisição inválida: 'medida' com formato errado
+POST http://localhost:5000/gravar
+Content-Type: application/json
+Accept: application/json
+
+{
+    "medida": 120,
+    "marcadores": [
+        {"local": "quarto"},
+        {"personagem": "Lola"},
+        {"acao": "curiosa"}
+    ],
+    "valores": [
+        {"latitude": -27.6084177},
+        {"longitude": -48.6354691},
+        {"altitude": 80}
+    ]
+}
+
+###
+
+# Requisição inválida: falta 'valores'
+POST http://localhost:5000/gravar
+Content-Type: application/json
+Accept: application/json
+
+{
+    "medida": "ideia",
+    "marcadores": [
+        {"local": "quarto"},
+        {"personagem": "Lola"},
+        {"acao": "curiosa"}
+    ]
+}
+
+###
+
+# Requisição inválida: 'valores' com formato errado
+POST http://localhost:5000/gravar
+Content-Type: application/json
+Accept: application/json
+
+{
+    "medida": "ideia",
+    "marcadores": [
+        {"local": "quarto"},
+        {"personagem": "Lola"},
+        {"acao": "curiosa"}
+    ],
+    "valores": 4567
+}
+
+###
+
+# Requisição inválida: lista 'valores' vazia
+POST http://localhost:5000/gravar
+Content-Type: application/json
+Accept: application/json
+
+{
+    "medida": "ideia",
+    "marcadores": [
+        {"local": "quarto"},
+        {"personagem": "Lola"},
+        {"acao": "curiosa"}
+    ],
+    "valores": [
+    ]
+}
+
+###
+
+# Requisição válida
+POST http://localhost:5000/gravar
+Content-Type: application/json
+Accept: application/json
+
+{
+    "medida": "ideia",
+    "marcadores": [
+        {"local": "quarto"},
+        {"personagem": "Lola"},
+        {"acao": "curiosa"}
+    ],
+    "valores": [
         {"latitude": -27.6084177},
         {"longitude": -48.6354691},
         {"altitude": 80}
