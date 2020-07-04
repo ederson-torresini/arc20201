@@ -13,7 +13,7 @@ ports:
   - port: 5000
     onOpen: open-preview
 tasks:
-  - init: pip3 install -r requirements.txt -r dns/requirements.txt -r http/requirements.txt -r tsdb/requirements.txt
+  - init: pip3 install -r requirements.txt -r dns/requirements.txt -r tsdb/requirements.txt
 vscode:
   extensions:
     - eamodio.gitlens@10.2.0:GNDO73Cmp0fYDiLNxVkbsQ==
