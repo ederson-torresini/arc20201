@@ -7,7 +7,7 @@
       "request": "launch",
       "module": "flask",
       "env": {
-        "FLASK_APP": "tsdb/servidor-flask",
+        "FLASK_APP": "tsdb/servidor_flask",
         "FLASK_ENV": "development",
         "FLASK_DEBUG": "0"
       },
