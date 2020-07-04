@@ -11,7 +11,6 @@ github:
     addLabel: prebuilt-in-gitpod
 ports:
   - port: 5000
-    onOpen: open-preview
 tasks:
   - init: pip3 install -r requirements.txt -r dns/requirements.txt -r tsdb/requirements.txt
 vscode:

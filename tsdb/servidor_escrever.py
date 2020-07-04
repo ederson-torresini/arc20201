@@ -1,3 +1,6 @@
+from requests import post
+
+
 def escrever(baseurl, org, bucket, token, dados):
     # Formatar a consulta
     url = "{}/api/v2/write?org={}&bucket={}".format(baseurl, org, bucket)
