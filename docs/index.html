@@ -41,7 +41,14 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Registro de um sobrevivente" startnode="1" creator="Twine" creator-version="2.3.9" ifid="399737AF-C975-4B1A-9E3A-64BF7384558C" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-story {
+<tw-storydata name="Registro de um sobrevivente" startnode="1" creator="Twine" creator-version="2.3.9" ifid="399737AF-C975-4B1A-9E3A-64BF7384558C" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Exo+2&family=Orbitron&display=swap');
+
+
+body, tw-story {
+	font-family: 'Exo 2', sans-serif;
+}
+
+tw-story {
 	padding: 5%;
 	background-color: #252624;
 	color: #E4F2F1;
@@ -77,7 +84,8 @@ if ("serviceWorker" in navigator) {
     .catch(err =>
     	console.error("Error registering service worker: ", err)
 		);
-}</script><tw-passagedata pid="1" name="Sobre o livro" tags="" position="401.5,275.5" size="100,100">Nada a declarar. (link-reveal: &quot;Ainda&quot;)[(open-url: &quot;https://github.com/boidacarapreta/arc20201&quot;)].</tw-passagedata></tw-storydata>
+}</script><tw-passagedata pid="1" name="Sobre o livro" tags="" position="401,275" size="100,100">Nada a declarar. (link-reveal: &quot;Ainda&quot;)[(open-url: &quot;https://github.com/boidacarapreta/arc20201&quot;)].
+</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
