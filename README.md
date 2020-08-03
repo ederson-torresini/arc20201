@@ -2,7 +2,17 @@
 
 Ambiente de prototipação com [Gitpod](https://gitpod.io).
 
-## Passo zero: antes de criar o Gitpod
+## Passo zero: ler (e escutar) o livro/jogo/apostila da disciplina
+
+A documentação completa está em https://arc20201.boidacarapreta.cc.
+
+## Passo um: bifucar este repositório
+
+Para poder realizar todas as ações solicitadas, e registrá-las devidamente no controle de versão, é preciso bifurcar este repositório para criar um repositório particular - preferencialmente público para facilitar a integração com o Gitpod. Assim, o Gitpod conseguirá gravar no repositório, uma vez que será próprio de cada aluno.
+
+A documentação do próprio GitHub de como bifurcar o repositório está em: https://docs.github.com/pt/github/getting-started-with-github/fork-a-repo.
+
+## Passo dois: antes de criar o Gitpod
 
 Antes de criar o Gitpod, é preciso criar as seguintes [variáveis de ambiente no Gitpod](https://gitpod.io/settings/):
 
@@ -24,8 +34,8 @@ Exemplo:
 
 Uma vez criadas as variáveis de ambiente, o Gitpod rodará o cliente em Python ou REST API com estes valores.
 
-## Passo um: como rodar o Gitpod
+## Passo três: como rodar o Gitpod
 
-Este repositório está preparado para rodar o código em modo depuração, com o objetivo de facilitar o desenvolvimento. Basta clicar em:
+Este repositório está preparado para rodar o código em modo depuração, com o objetivo de facilitar o desenvolvimento. Basta adicionar a URL deste respositório a `https://gitpod.io/#` para abrir no Gitpod.
 
-[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/boidacarapreta/arc20201)
+Por exemplo, o repositório modelo `boidacarapreta/arc20201` fica assim: `https://gitpod.io/#https://github.com/boidacarapreta/arc20201` (com dois `https` mesmo).
