@@ -6,7 +6,7 @@ Ambiente de prototipação com [Gitpod](https://gitpod.io).
 
 A documentação completa está em https://arc20201.boidacarapreta.cc.
 
-## Passo um: bifucar este repositório
+## Passo um: bifurcar este repositório
 
 Para poder realizar todas as ações solicitadas, e registrá-las devidamente no controle de versão, é preciso bifurcar este repositório para criar um repositório particular - preferencialmente público para facilitar a integração com o Gitpod. Assim, o Gitpod conseguirá gravar no repositório, uma vez que será próprio de cada aluno.
 
