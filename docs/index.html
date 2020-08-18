@@ -9,8 +9,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 <meta name="application-name" content="Registro de um sobrevivente" />
 <meta name="apple-mobile-web-app-title" content="Registro de um sobrevivente" />
-<meta name="theme-color" content="#56594A" />
-<meta name="msapplication-navbutton-color" content="#56594A" />
+<meta name="theme-color" content="#F51938" />
+<meta name="msapplication-navbutton-color" content="#F51938" />
 <meta name="msapplication-starturl" content="./index.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="manifest" href="./manifest.json" />
@@ -50,16 +50,16 @@ body, tw-story {
 
 tw-story {
 	padding: 5%;
-	background-color: #252624;
-	color: #E4F2F1;
+	background-color: #212123;
+	color: #E3DCE3;
 }
 
 tw-enchantment.link, tw-link, tw-link.visited {
-	color: #C9DFF2;
+	color: #F51938;
 }
 
 tw-enchantment.link:hover, tw-link:hover, tw-link.visited:hover {
-	color: #56594A;
+	color: #4D90BA;
 }
 
 .video-container {
@@ -110,7 +110,7 @@ Vivemos tempos difíceis. Há tempos, não nos iludamos. A Internet revolucionou
 
 E não esquece: (text-style: &quot;mark&quot;)[a saída é pela porta da frente].
 ---
-Avançar para [[20200803]].</tw-passagedata><tw-passagedata pid="3" name="Autosalvamento" tags="header" position="99,102" size="100,100">(if: (history:)&#39;s length &lt; 1)[(if: (saved-games:) contains &#39;Slot A&#39;)[(load-game: &#39;Slot A&#39;)]](else:)[(save-game: &#39;Slot A&#39;)]</tw-passagedata><tw-passagedata pid="4" name="Sumário" tags="header" position="300,101.5" size="100,100">(font: &quot;Orbitron&quot;)[|chamada&gt;[(link:&quot;🧭 Sumário&lt;br&gt;➡️ (print:(passage:)&#39;s name)&quot;)[(show:?jornada)]]|jornada)[🧭 Sumário(for: each _passagem, ...(a:&quot;Sobre o livro&quot;, &quot;Esclarecimentos&quot;, &quot;20200704&quot;, &quot;T1E1&quot;, &quot;T1E2&quot;, &quot;T1E3&quot;, &quot;T1E4&quot;, &quot;T1E5&quot;, &quot;T1E6&quot;, &quot;T1E7&quot;, &quot;T1E8&quot;, &quot;T1E9&quot;, &quot;20200727&quot;, &quot;20200803&quot;, &quot;20200805&quot;, &quot;20200807&quot;,&quot;20200810&quot;,&quot;20200812&quot;))[&lt;br&gt;(if: (passage:)&#39;s name is _passagem)[➡️ [[_passagem]]](else:)[(if: (history:) contains _passagem)[✅ [[_passagem]]](else:)[🔜 [[_passagem]]]]]]]
+Avançar para [[20200803]].</tw-passagedata><tw-passagedata pid="3" name="Autosalvamento" tags="header" position="99,102" size="100,100">(if: (history:)&#39;s length &lt; 1)[(if: (saved-games:) contains &#39;Slot A&#39;)[(load-game: &#39;Slot A&#39;)]](else:)[(save-game: &#39;Slot A&#39;)]</tw-passagedata><tw-passagedata pid="4" name="Sumário" tags="header" position="300,101.5" size="100,100">(font: &quot;Orbitron&quot;)[|chamada&gt;[(link:&quot;🧭 Sumário&lt;br&gt;➡️ (print:(passage:)&#39;s name)&quot;)[(show:?jornada)]]|jornada)[🧭 Sumário(for: each _passagem, ...(a:&quot;Sobre o livro&quot;, &quot;Esclarecimentos&quot;, &quot;20200704&quot;, &quot;T1E1&quot;, &quot;T1E2&quot;, &quot;T1E3&quot;, &quot;T1E4&quot;, &quot;T1E5&quot;, &quot;T1E6&quot;, &quot;T1E7&quot;, &quot;T1E8&quot;, &quot;T1E9&quot;, &quot;20200727&quot;, &quot;20200803&quot;, &quot;20200805&quot;, &quot;20200807&quot;,&quot;20200810&quot;,&quot;20200812&quot;,&quot;20200818&quot;))[&lt;br&gt;(if: (passage:)&#39;s name is _passagem)[➡️ [[_passagem]]](else:)[(if: (history:) contains _passagem)[✅ [[_passagem]]](else:)[🔜 [[_passagem]]]]]]]
 ---
 </tw-passagedata><tw-passagedata pid="5" name="20200803" tags="" position="502,201.5" size="100,100">(if: (history:) contains &quot;20200704&quot; and (history:) contains &quot;20200727&quot;)[(set: $passado to true)Antes de mais nada, é preciso te dizer uma coisa: com este sistema mínimo, *backend* e banco de dados e seus poucos registros, consegui rascunhar a primeira versão, ainda não revisada e ampliada, do conto: (link-repeat: &quot;https://contos.boidacarapreta.cc/reino.html 🔗&quot;)[(open-url: &quot;https://contos.boidacarapreta.cc/reino.html&quot;)]. Ainda não tem uma definição mais clara dos personagens, os perfis, características - o que gera dificuldade de empatia, eu sei. Não está bem definido o formato do texto para um público infanto-juvenil, que era a ideia inicial. A jornada deve aparecer na metade do conto em diante, mas não fica evidente. Apesar de tudo, o ritmo das ações, e da leitura, eu gostei.
 
@@ -271,7 +271,41 @@ Edmund Burke
 Voltar para [[20200803]].]</tw-passagedata><tw-passagedata pid="20" name="20200812" tags="" position="1301.6666666666667,204.8333333333333" size="100,100">(if: $passado is true)[&quot;*A guerra é o Tao do ardil. Assim, ainda que sejas capaz, exibe incapacidade. Quando decidido a empregar tuas forças, finge inatividade. Quando teu objetivo estiver próximo, faz com que pareça distante; quando distante, cria a ilusão de que está próximo.*&quot;
 (Sun Tzu)
 
-O movimento, agora, é do oponente. Aguardemos. Em breve, farei a convocação pelo podcast para pegarmos em armas digitais... Se O Grande Irmão queria serviçais, acabou por criar uma célula rebelde!](else:)[“*O povo que não conhece sua história está condenado a repeti-la.*”
+O movimento, agora, é do oponente. Aguardemos. Em breve, farei a convocação pelo podcast para pegarmos em armas digitais... Se O Grande Irmão queria serviçais, acabou por criar uma célula rebelde!
+---
+Avançar para [[20200818]].](else:)[“*O povo que não conhece sua história está condenado a repeti-la.*”
+Edmund Burke
+---
+Voltar para [[20200803]].]</tw-passagedata><tw-passagedata pid="21" name="20200818" tags="" position="1503.3333333333335,304.83333333333326" size="100,100">(if: $passado is true)[(set: $presente to true)(text-style:&quot;smear&quot;)[Missão &quot;Presente&quot; cumprida!
+&quot;Célula Rebelde: Semana 1&quot; desbloqueado.]
+
+Companheira, companheiro. É chegada a hora de unirmos nossos esforços contra as forças do mal. Hoje de tarde, mesmo, recebi (link-repeat: &quot;estranhas mensagens no Slack 🔗&quot;)[(open-url: &quot;https://ortadigital.slack.com/archives/C010FH7J62D/p1597689892000100&quot;)]. Nosso sistema interno de comunicação foi comprometido. Temo que eu tenha trazido código infectado das profundezas da *Deep Web*, após a conversa com O Grande Irmão. Aliás, fica atento às minhas mensagens: alguém pode estar se passando por mim. A dúvida é o preço da pureza.
+
+O inimigo está perto.
+
+É hora de destacarmos uma equipe para treinamento intensivo em furtividade cibernética. Criptografia baseada em chaves assimétricas. Estratégia (em grego *strateegia*...). O teatro de operações é a virtualidade!
+
+Nesta primeira semana, os conceitos fundamentais. Encaminharei várias leituras para entender sobre Internet das coisas, computação em nuvem, *big data*, inteligência artificial.
+
+Parece estranho, mas o nosso sistema, apesar de simples, é um modelo bastante simplificado de Internet das coisas:
+0. Sistema de coleta de dados do ambiente físico com sensores;
+0. Formatação dos dados;
+0. Uso de um ou mais protocolos comuns de transmissão entre máquinas (M2M, ou *machine-to-machine*) como JSON);
+0. Envio dos dados a um sistema central;
+0. Processamento dos dados, ou normalização;
+0. Armazenamento em bases de dados de grande volume.
+Isso normalmente acontece em ambientes de grande poder de processamento, como na computação em nuvem, onde as demandas (processamento, armazenamento e rede) são bastante elásticos. Esse volume de dados final, esse *big data*, pode então ser analisado por sistemas de inteligência artificial, como do tipo aprendizado de máquina para detectar padrões.
+
+(link-repeat: &quot;Padrões 🔗&quot;)[(open-url: &quot;http://www.isfdb.org/cgi-bin/title.cgi?2392726&quot;)]. Quem somos, De onde viemos. O que compramos. O nosso DNA. O RNA dos nanorrobôs. RNA mensageiro. E, por que não, (link-repeat: &quot;mutações seletivas 🔗&quot;)[(open-url: &quot;http://www.isfdb.org/cgi-bin/title.cgi?2392744&quot;)].
+
+Então, o nosso sistema original de monitoramento, ou sensoreamento, de pequenas hortas domésticas pode ser convertido para um sistema de anotações de frases de efeito para produção de contos, ou registro de músicas, ou mesmo qualquer informação com relação ao tempo e espaço. Ou mesmo um serviço seguro de comunicação. A informação, associada ao momento (*timestamp*) em que foi criada. Os dados são formatados por um protocolo de transmissão M2M, como o par HTTP + JSON que já usamos, para um servidor que faz o seu processamento: validação, conversão para um formato interno (como o *line protocol* do InfluxDB). E o final é o armazenamento no banco de dados de série temporal.
+
+Os conceitos são os mesmos. Uma vez entendidos, podemos usar o mesmo molde para várias ferramentas. Lembra bem o que vimos no [[passado|20200704]]. O que acontece de tivermos o seguinte formato de dado:
+0. A indicação de uma mensagem;
+0. Quem envia e para quem envia;
+0. A mensagem em si;
+0. Informações imprecisas (para preservar a privacidade e possíveis ataques das ERBs da região) de geolocalização como números.
+O que temos, na prática, é o nosso atual sistema convertido para um comunicador com histórico! É a chance que temos para nos comunicarmos com segurança!](else:)[“*O povo que não conhece sua história está condenado a repeti-la.*”
 Edmund Burke
 ---
 Voltar para [[20200803]].]</tw-passagedata></tw-storydata>
