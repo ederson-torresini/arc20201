@@ -1,0 +1,6 @@
+tasks:
+  - init: pip3 install -r requirements.txt
+vscode:
+  extensions:
+    - eamodio.gitlens@10.2.0:GNDO73Cmp0fYDiLNxVkbsQ==
+    - esbenp.prettier-vscode@2.3.0:1F0Pvb/ORZ/T+b60LIMs8w==
