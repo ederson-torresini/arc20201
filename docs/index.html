@@ -122,6 +122,7 @@ tw-enchantment.link:hover, tw-link:hover, tw-link.visited:hover {
 .geolocation {
   font-family: VT323;
   color: #4AF626;
+  white-space: pre-wrap;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript">// Service worker
 if ("serviceWorker" in navigator) {
 	navigator.serviceWorker
@@ -376,13 +377,10 @@ Pode clicar. Por enquanto, é inofensivo: não enviará os dados para nenhum ser
     }
   };
   function showPosition(position) {
-    msg.textContent =
-      &quot;Latitude: &quot; +
-      position.coords.latitude +
-      &quot; / Longitude: &quot; +
-      position.coords.longitude +
-      &quot; / Altitude: &quot; +
-      position.coords.altitude;
+    msg.innerText =
+      &quot;Latitude: &quot; + position.coords.latitude +
+      &quot;\nLongitude: &quot; + position.coords.longitude +
+      &quot;\nAltitude: &quot; + position.coords.altitude;
   }
 &lt;/script&gt;
 ---
