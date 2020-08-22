@@ -1,6 +1,6 @@
 from dotenv import load_dotenv
 from os import environ
-from flask import Flask, request
+from flask import Flask, request, abort
 from requests import post
 from servidor_validar_json import validar_json
 from servidor_converter_json_line_protocol import converter_json_line_protocol
@@ -20,6 +20,11 @@ baseurl = environ.get("INFLUXDB_BASEURL")
 org = environ.get("INFLUXDB_ORG")
 bucket = environ.get("INFLUXDB_BUCKET")
 token = environ.get("INFLUXDB_TOKEN")
+
+
+@app.route("/")
+def index():
+    abort(404)
 
 
 @app.route("/gravar", methods=["POST"])
