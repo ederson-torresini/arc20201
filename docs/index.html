@@ -354,10 +354,11 @@ Os conceitos são os mesmos. Uma vez entendidos, podemos usar o mesmo molde para
 0. Informações imprecisas (para preservar a privacidade e possíveis ataques das ERBs da região) de geolocalização como números.
 O que temos, na prática, é o nosso atual sistema convertido para um comunicador com histórico! É a chance que temos para nos comunicarmos com segurança!
 ---
-Avançar para [[20200819]].</tw-passagedata><tw-passagedata pid="22" name="20200819" tags="" position="1701,303" size="100,100">Esta lógica de uma aplicação modelo para vários cenários já era presente na nossa formação. Se voltarmos um pouco no tempo, este vídeo trazia uma visão geral e bastante genérica:
+Avançar para [[20200819]].</tw-passagedata><tw-passagedata pid="22" name="20200819" tags="" position="1696,301.3333333333333" size="100,100">Esta lógica de uma aplicação modelo para vários cenários já era presente na nossa formação. Se voltarmos um pouco no tempo, este vídeo trazia uma visão geral e bastante genérica:
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/0ytx538_Hvw&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;
-E no segundo vídeo adaptei para a produção de contos: ⚠️ (click: &quot;⚠️&quot;)[(alert: &quot;Eu sei, gravei com o celular em pé. Vivendo e aprendendo...&quot;)]
+E no segundo vídeo adaptei para a produção de contos:
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/cAGI19uhKMk&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;
+(Eu sei, gravei com o celular em pé. Vivendo e aprendendo...)
 
 Agora, imaginemos um sistema de comunicação que traz informações como remetente, destinatário, momento exato da transmissão (*timestamp*) e geolocalização (com imprecisão forçada para preservar a integridade de todos os envolvidos). 
 
@@ -368,20 +369,42 @@ Vamos para um (link-repeat: &quot;exemplo prático 🔗&quot;)[(open-url: &quot;
 Pode clicar. Por enquanto, é inofensivo: não enviará os dados para nenhum servidor (olha o código fonte).
 &lt;div id=&quot;msg&quot; class=&quot;geolocation&quot;&gt;&lt;/div&gt;
 &lt;script&gt;
-  var msg = document.getElementById(&quot;msg&quot;);
-  document.getElementById(&quot;clica&quot;).onclick = function () {
-    if (navigator.geolocation) {
-      navigator.geolocation.watchPosition(showPosition);
-    } else {
-      msg.textContent = &quot;Geolocation is not supported by this browser.&quot;;
-    }
-  };
-  function showPosition(position) {
-    msg.innerText =
-      &quot;Latitude: &quot; + position.coords.latitude +
-      &quot;\nLongitude: &quot; + position.coords.longitude +
-      &quot;\nAltitude: &quot; + position.coords.altitude;
+var msg = document.getElementById(&quot;msg&quot;);
+document.getElementById(&quot;clica&quot;).onclick = function () {
+  if (navigator.geolocation) {
+    navigator.geolocation.watchPosition(showPosition, showError);
+  } else {
+    msg.textContent = &quot;Geolocation is not supported by this browser.&quot;;
   }
+};
+function showPosition(position) {
+  msg.innerHTML =
+    &quot;Latitude: &quot; +
+    position.coords.latitude +
+    &quot;&lt;br&gt;Longitude: &quot; +
+    position.coords.longitude +
+    &quot;&lt;br&gt;Altitude: &quot; +
+    position.coords.altitude +
+    &quot;&lt;br&gt;Velocidade: &quot; +
+    position.coords.speed;
+}
+function showError(error) {
+  switch (error.code) {
+    case error.PERMISSION_DENIED:
+      msg.innerHTML = &quot;Denial is the most predictable of all human responses.&quot;;
+      break;
+    case error.POSITION_UNAVAILABLE:
+      msg.innerHTML = &quot;Ignorance is bliss.&quot;;
+      break;
+    case error.TIMEOUT:
+      msg.innerHTML =
+        &quot;Ever have that feeling where you&#39;re not sure if you&#39;re awake or dreaming?&quot;;
+      break;
+    case error.UNKNOWN_ERROR:
+      msg.innerHTML = &quot;What you know you can&#39;t explain, but you feel it.&quot;;
+      break;
+  }
+}
 &lt;/script&gt;
 ---
 Sim, jovem padawan, a ideia é exatamente esta: este jogo será a nossa ferramenta de comunicação. Já temos HTTPS, suporte a geolocalização e, em breve, autenticação!
