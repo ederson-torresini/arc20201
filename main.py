@@ -59,7 +59,7 @@ def gravar():
                 # sucesso, e retorna uma resposta vazia (No Content).
                 if escrita_codigo == 204:
                     # Retornar 200 OK para o cliente.
-                    return req, 200
+                    return req, 201
                 else:
                     # Ainda há algum problema?
                     # Retornar 500, quando o servidor não sabe o que fazer
@@ -70,3 +70,7 @@ def gravar():
         resposta = {
             "Erro": "Tipo de conteúdo não definido como JSON."}
         return resposta, 400
+
+
+if __name__ == '__main__':
+    app.run(host='127.0.0.1', port=5000, debug=True)

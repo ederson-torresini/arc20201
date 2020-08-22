@@ -7,7 +7,7 @@
       "request": "launch",
       "module": "flask",
       "env": {
-        "FLASK_APP": "${workspaceFolder}/servidor_flask",
+        "FLASK_APP": "${workspaceFolder}/main",
         "FLASK_ENV": "development",
         "FLASK_DEBUG": "0"
       },
