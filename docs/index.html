@@ -119,7 +119,7 @@ tw-enchantment.link:hover, tw-link:hover, tw-link.visited:hover {
   right: 0;
 }
 
-.geolocation, .video {
+.msg-geolocation, .msg-video {
   font-family: VT323;
   color: #4AF626;
   white-space: pre-wrap;
@@ -127,6 +127,8 @@ tw-enchantment.link:hover, tw-link:hover, tw-link.visited:hover {
 
 .camera {
   object-fit: cover;
+  max-width: 100%;
+  height: auto;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript">// Service worker
 if ("serviceWorker" in navigator) {
 	navigator.serviceWorker
@@ -371,7 +373,7 @@ Geolocalização? Lembra que isto é um PWA, uma aplicação Web de conteúdo di
 Vamos para um (link-repeat: &quot;exemplo prático 🔗&quot;)[(open-url: &quot;https://www.w3schools.com/html/html5_geolocation.asp&quot;)]:
 &lt;button type=&quot;button&quot; id=&quot;clica&quot; class=&quot;button&quot;&gt;Clica aqui&lt;/button&gt;
 Pode clicar. Por enquanto, é inofensivo: não enviará os dados para nenhum servidor (olha o código fonte).
-&lt;div id=&quot;msg&quot; class=&quot;geolocation&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;msg&quot; class=&quot;msg-geolocation&quot;&gt;&lt;/div&gt;
 &lt;script&gt;
 var msg = document.getElementById(&quot;msg&quot;);
 document.getElementById(&quot;clica&quot;).onclick = function () {
@@ -415,7 +417,7 @@ Sim, jovem padawan, a ideia é exatamente esta: este jogo será a nossa ferramen
 ---
 (text-style: &quot;blur&quot;)[Nota mental: como saber se meus alunos não são *deepfakes* ou já sucumbiram ao controle mental remoto?]
 ---
-Avançar para [[20200826]].</tw-passagedata><tw-passagedata pid="23" name="20200826" tags="" position="1502,500.3333333333333" size="100,100">(text-style:&quot;smear&quot;)[Missão &quot;Semana 1&quot; cumprida!
+Avançar para [[20200826]].</tw-passagedata><tw-passagedata pid="23" name="20200826" tags="" position="1502,500" size="100,100">(text-style:&quot;smear&quot;)[Missão &quot;Semana 1&quot; cumprida!
 &quot;Célula Rebelde: Semana 2&quot; desbloqueado.]
 
 Calma. Ainda estamos pisando em terreno seguro. Nada, repito, nada está sendo enviado para servidor(es) remoto(s). Lembra: ainda estamos em fase de treinamento da célula rebelde.
@@ -429,7 +431,7 @@ Pensa comigo: se as máquinas estão em todos os lugares, e meus sistemas estão
 Vamos para outro (link-repeat: &quot;outro exemplo prático 🔗&quot;)[(open-url: &quot;https://www.html5rocks.com/en/tutorials/getusermedia/intro/&quot;)]:
 &lt;button type=&quot;button&quot; id=&quot;clica&quot; class=&quot;button&quot;&gt;Clica aqui&lt;/button&gt;
 &lt;video autoplay class=&quot;camera&quot;&gt;&lt;/video&gt;
-&lt;div id=&quot;msg&quot; class=&quot;video&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;msg&quot; class=&quot;msg-video&quot;&gt;&lt;/div&gt;
 &lt;script&gt;
 var constraints = {
   video: {
