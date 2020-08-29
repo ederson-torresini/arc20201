@@ -4,6 +4,11 @@
 # SO
 .DS_Store
 
+# Node.js
+node_modules/
+.*history
+package-lock.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
