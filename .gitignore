@@ -1,6 +1,13 @@
-node_modules
-.editorconfig
-.DS_Store*
+# MacOS
+.DS_Store
+
+# Node.js
+node_modules/
+package-lock.json
+
+# Hubot
 .hubot_history
+
+# Projeto
 .env
 docs/
