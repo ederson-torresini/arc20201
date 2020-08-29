@@ -495,15 +495,13 @@ Desta vez, os dados já serão apresentados abaixo em JSON.
     }
   };
   document.getElementById(&quot;envia&quot;).onclick = function () {
+    console.log(JSON.stringify(dados));
     var res = fetch(&quot;https://api.arc20201.boidacarapreta.cc/gravar&quot;, {
       method: &quot;POST&quot;,
       headers: {
-        &quot;Content-Type&quot;: &quot;application/json&quot;,
+        &quot;Content-type&quot;: &quot;application/json; charset=UTF-8&quot;,
         Accept: &quot;application/json&quot;,
-        Origin: &quot;https://arc20201.boidacarapreta.cc&quot;,
-        &quot;Access-Control-Allow-Origin&quot;: &quot;*&quot;,
       },
-      mode: &quot;no-cors&quot;,
       body: JSON.stringify(dados),
     }).then((msg.innerHTML = &quot;Dados enviados? &quot;));
     msg.innerHTML += res.status;
