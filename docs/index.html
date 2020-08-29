@@ -501,7 +501,9 @@ Desta vez, os dados já serão apresentados abaixo em JSON.
         &quot;Content-Type&quot;: &quot;application/json&quot;,
         Accept: &quot;application/json&quot;,
         Origin: &quot;https://arc20201.boidacarapreta.cc&quot;,
+        &quot;Access-Control-Allow-Origin&quot;: &quot;*&quot;,
       },
+      mode: &quot;no-cors&quot;,
       body: JSON.stringify(dados),
     }).then((msg.innerHTML = &quot;Dados enviados? &quot;));
     msg.innerHTML += res.status;
