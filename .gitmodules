@@ -1,0 +1,3 @@
+[submodule "open-easyrtc"]
+	path = open-easyrtc
+	url = https://github.com/open-easyrtc/open-easyrtc
