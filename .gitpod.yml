@@ -2,6 +2,5 @@ ports:
   - port: 8080
     onOpen: open-preview
 tasks:
-  - init: cd $THEIA_WORKSPACE_ROOT/open-easyrtc && npm install
-  - init: cd $THEIA_WORKSPACE_ROOT/open-easyrtc/server_example && npm install
+  - init: cd $THEIA_WORKSPACE_ROOT/open-easyrtc && npm install && cd $THEIA_WORKSPACE_ROOT/open-easyrtc/server_example && npm install
     command: cd $THEIA_WORKSPACE_ROOT/open-easyrtc/server_example && npm start
