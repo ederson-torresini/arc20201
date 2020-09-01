@@ -13,6 +13,11 @@ __pycache__/
 /setup.cfg
 venv/
 
+# Node.js
+.hubot_history
+node_modules/
+open-easyrtc/
+
 # Gitpod
 .theia/
 .gitpod.yml

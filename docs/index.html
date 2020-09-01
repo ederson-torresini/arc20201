@@ -263,7 +263,7 @@ O termo rádio cognitivo não diz nada?! Já viu o formato daquelas antenas? Há
 
 Qual o objetivo? Por que induzir uma doença até atingir, ao que parece, uma massa crítica e, ao mesmo tempo, monitorar todas as pessoas? O que acontecerá em seguida? Sobrecarga dos sistemas? Colapso do capitalismo?
 
-Ninguém leu o conto (link-repeat: &quot;O Reino do Ar-condicionado 🔗&quot;)[(open-url: &quot;https://contos.boidacarapreta.cc/reino.html&quot;)]. Eu sei, eu monitoro os acessos. As máquinas também registram. Máquinas estas que continuam caçando, mastigando, engolindo tudo o que eu faço, há muito tempo. Como um grande carnívoro. 
+Ninguém leu o conto (link-repeat: &quot;O Reino do Ar-condicionado 🔗&quot;)[(open-url: &quot;https://contos.boidacarapreta.cc/reino.html&quot;)]. Eu sei, eu monitoro os acessos. As máquinas também registram. Máquinas estas que continuam caçando, mastigando, engolindo tudo o que eu faço, há muito tempo. Como um grande carnívoro.
 
 Temos pouco tempo. Menos de 90 dias. Em 30/10/2020 será o dia do apocalipse zumbi.
 
@@ -366,7 +366,7 @@ E no segundo vídeo adaptei para a produção de contos:
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/cAGI19uhKMk&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;
 (Eu sei, gravei com o celular em pé. Vivendo e aprendendo...)
 
-Agora, imaginemos um sistema de comunicação que traz informações como remetente, destinatário, momento exato da transmissão (*timestamp*) e geolocalização (com imprecisão forçada para preservar a integridade de todos os envolvidos). 
+Agora, imaginemos um sistema de comunicação que traz informações como remetente, destinatário, momento exato da transmissão (*timestamp*) e geolocalização (com imprecisão forçada para preservar a integridade de todos os envolvidos).
 
 Geolocalização? Lembra que isto é um PWA, uma aplicação Web de conteúdo dinâmico. Podemos usar as funcionalidades do interpretador local, o navegador.
 ---
@@ -424,7 +424,7 @@ Calma. Ainda estamos pisando em terreno seguro. Nada, repito, nada está sendo e
 
 Se [[há pouco tempo|20200817]] falei de coletar dados, e logo depois de [[geolocalização|20200819]], agora quero falar de mídia em tempo real. Eu entendo que as redes sociais e ferramentas de comunicação assíncrona, como chats, são uma constante nos dias atuais. Porém, além de nos dar a falsa sensação de realizar múltiplas tarefas, também colocam mais um véu até chegar à pessoa real. Falamos com avatares?
 
-Somos avatares? 
+Somos avatares?
 
 Pensa comigo: se as máquinas estão em todos os lugares, e meus sistemas estão provavelmente comprometidos, precisamos ter certeza **quem** e **de onde** está falando. Precisamos estabelecer relações de confiança entre as pessoas. Os alunos somem e reaparecem, mas (link-repeat: &quot;serão eles 🔗&quot;)[(open-url: &quot;http://www.isfdb.org/cgi-bin/title.cgi?2346325&quot;)](link-repeat: &quot;quem dizer ser? 🔗&quot;)[(open-url: &quot;https://www.netflix.com/title/80097140&quot;)]
 ---
@@ -476,18 +476,19 @@ Mas estou sofismando. Vamos ao que interessa: nesta segunda semana, será feito 
 ---
 Desta vez, os dados já serão apresentados abaixo em JSON.
 &lt;button type=&quot;button&quot; id=&quot;clica&quot; class=&quot;button&quot;&gt;Clica aqui&lt;/button&gt;
-&lt;button type=&quot;button&quot; id=&quot;envia&quot; class=&quot;button&quot; disabled=&quot;disabled&quot;&gt;
-  Envia
-&lt;/button&gt;
 &lt;div id=&quot;msg&quot; class=&quot;msg-geolocation&quot;&gt;&lt;/div&gt;
+&lt;button type=&quot;button&quot; id=&quot;envia&quot; class=&quot;button&quot; disabled=&quot;disabled&quot;&gt;Envia&lt;/button&gt;
+&lt;div id=&quot;msg-resposta&quot; class=&quot;msg-geolocation&quot;&gt;&lt;/div&gt;
 &lt;script&gt;
   var msg = document.getElementById(&quot;msg&quot;);
+  var msg_resposta = document.getElementById(&quot;msg-resposta&quot;);
   var dados = {};
   var latitude = {};
   var longitude = {};
   var marcadores = [];
   var valores;
   document.getElementById(&quot;clica&quot;).onclick = function () {
+    msg.innerHTML = &quot;Obtendo geolocalização do dispositivo... (pode demorar até 1min)&quot;;
     if (navigator.geolocation) {
       navigator.geolocation.watchPosition(showPosition, showError);
     } else {
@@ -495,7 +496,9 @@ Desta vez, os dados já serão apresentados abaixo em JSON.
     }
   };
   document.getElementById(&quot;envia&quot;).onclick = function () {
-    console.log(JSON.stringify(dados));
+    msg_resposta.innerHTML =
+      &quot;Estabelecendo conexão criptografada com o servidor da célula rebelde...&quot;;
+    console.log(&quot;JSON enviado ao servidor: &quot; + JSON.stringify(dados));
     var res = fetch(&quot;https://api.arc20201.boidacarapreta.cc/gravar&quot;, {
       method: &quot;POST&quot;,
       headers: {
@@ -503,8 +506,11 @@ Desta vez, os dados já serão apresentados abaixo em JSON.
         Accept: &quot;application/json&quot;,
       },
       body: JSON.stringify(dados),
-    }).then((msg.innerHTML = &quot;Dados enviados? &quot;));
-    msg.innerHTML += res.status;
+    }).then((response) =&gt; {
+      console.log(&quot;Código HTTP de resposta do servidor: &quot; + response.status);
+      msg_resposta.innerHTML =
+        &quot;Código HTTP de resposta do servidor: &quot; + response.status;
+    });
   };
   function showPosition(position) {
     document.getElementById(&quot;envia&quot;).removeAttribute(&quot;disabled&quot;);
@@ -515,6 +521,7 @@ Desta vez, os dados já serão apresentados abaixo em JSON.
     valores.push(latitude, longitude);
     dados[&quot;valores&quot;] = valores;
     msg.innerHTML = JSON.stringify(dados);
+    msg_resposta.innerHTML = &quot;&quot;;
   }
   function showError(error) {
     switch (error.code) {
