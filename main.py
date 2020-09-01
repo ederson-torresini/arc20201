@@ -1,12 +1,14 @@
 from dotenv import load_dotenv
 from os import environ
 from flask import Flask, request, abort
+from flask_cors import CORS
 from requests import post
 from servidor_validar_json import validar_json
 from servidor_converter_json_line_protocol import converter_json_line_protocol
 from servidor_escrever import escrever
 
 app = Flask(__name__)
+CORS(app)
 
 # Se houver um arquivo .env, que é comum em ambientes de desenvolvimento
 # como IDEs locais (a exemplo de Visual Studio Code), carregar os valores
