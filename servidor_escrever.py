@@ -1,4 +1,5 @@
 from requests import post
+from json import dumps
 
 
 def escrever(baseurl, org, bucket, token, dados):
@@ -11,4 +12,11 @@ def escrever(baseurl, org, bucket, token, dados):
     req = post(url, headers=cabeçalhos, data=dados)
 
     # Retornar para a aplicação principal apenas o código HTTP de retorno
+    return req.status_code
+
+
+def notificar(webhook, msg):
+    cabeçalhos = {"Content-Type": "application/json; charset=UTF-8"}
+    data = {"text": msg}
+    req = post(webhook, headers=cabeçalhos, data=dumps(data))
     return req.status_code

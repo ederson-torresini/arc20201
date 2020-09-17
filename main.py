@@ -5,7 +5,7 @@ from flask_cors import CORS
 from requests import post
 from servidor_validar_json import validar_json
 from servidor_converter_json_line_protocol import converter_json_line_protocol
-from servidor_escrever import escrever
+from servidor_escrever import escrever, notificar
 
 app = Flask(__name__)
 CORS(app)
@@ -22,6 +22,7 @@ baseurl = environ.get("INFLUXDB_BASEURL")
 org = environ.get("INFLUXDB_ORG")
 bucket = environ.get("INFLUXDB_BUCKET")
 token = environ.get("INFLUXDB_TOKEN")
+webhook = environ.get("GOOGLE_CHAT_WEBHOOK")
 
 
 @app.route("/")
@@ -59,7 +60,9 @@ def gravar():
                 # Os dados estão corretos.
                 # Hora de enviar ao banco e retornar à primeira aplicação se a
                 # operação deu certo ou não.
-                line_protocol = converter_json_line_protocol(req)
+                line_protocol, url = converter_json_line_protocol(req)
+                if url:
+                    notificar(webhook, url)
                 escrita_codigo = escrever(
                     baseurl, org, bucket, token, line_protocol)
                 # O InfluxDB retorna 204 quando a operação é realizada com

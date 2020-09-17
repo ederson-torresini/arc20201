@@ -1,7 +1,7 @@
 ###
 
 # Requisição válida
-POST http://localhost:5000/gravar
+POST http://api.arc20201.boidacarapreta.cc/gravar
 Content-Type: application/json
 Accept: application/json
 
@@ -10,7 +10,8 @@ Accept: application/json
     "marcadores": [
         {"local": "quarto"},
         {"personagem": "Lola"},
-        {"acao": "curiosa"}
+        {"acao": "curiosa"},
+        {"url": "https://arc20201.boidacarapreta.cc"}
     ],
     "valores": [
         {"latitude": -27.6084177},
