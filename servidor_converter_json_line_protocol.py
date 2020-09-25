@@ -3,7 +3,6 @@ def converter_json_line_protocol(json):
 
     # Começar a linha com a medida (measurement)
     line_protocol = json["medida"]
-    url = None
 
     # Na sequência, adicionar os marcadores (quando houver)
     if "marcadores" in json:
@@ -19,8 +18,6 @@ def converter_json_line_protocol(json):
             for chave, valor in item.items():
                 # Adicionar, ao final da string, o formato: "," + chave + "=" + valor.
                 line_protocol += ",{}={}".format(chave, valor)
-                if chave.lower() == "url":
-                    url = str(valor)
 
     # Por fim, adicionar os valores (obrigatório pelo menos um).
     # Antes de mais nada, separar os marcadores dos valores por um espaço (" ").
@@ -42,4 +39,4 @@ def converter_json_line_protocol(json):
     # "measurement,tags values"
     # Como neste exemplo:
     # "measurement,tag0=abc,tag1=def,tag2=fgh value0=100,value1=200,value2=300"
-    return line_protocol, url
+    return line_protocol

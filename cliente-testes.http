@@ -1,7 +1,7 @@
 ###
 
-# Requisição válida
-POST http://api.arc20201.boidacarapreta.cc/gravar
+# Requisição válida (original)
+POST http://localhost:5000/gravar
 Content-Type: application/json
 Accept: application/json
 
@@ -10,8 +10,7 @@ Accept: application/json
     "marcadores": [
         {"local": "quarto"},
         {"personagem": "Lola"},
-        {"acao": "curiosa"},
-        {"url": "https://arc20201.boidacarapreta.cc"}
+        {"acao": "curiosa"}
     ],
     "valores": [
         {"latitude": -27.6084177},
@@ -154,7 +153,7 @@ Accept: application/json
 
 ###
 
-# Requisição válida
+# Requisição válida, porém sem codinome
 POST http://localhost:5000/gravar
 Content-Type: application/json
 Accept: application/json
@@ -164,7 +163,53 @@ Accept: application/json
     "marcadores": [
         {"local": "quarto"},
         {"personagem": "Lola"},
-        {"acao": "curiosa"}
+        {"acao": "curiosa"},
+        {"url": "https://arc20201.boidacarapreta.cc"}
+    ],
+    "valores": [
+        {"latitude": -27.6084177},
+        {"longitude": -48.6354691},
+        {"altitude": 80}
+    ]
+}
+
+###
+
+# Requisição válida, porém sem url
+POST http://localhost:5000/gravar
+Content-Type: application/json
+Accept: application/json
+
+{
+    "medida": "ideia",
+    "marcadores": [
+        {"local": "quarto"},
+        {"personagem": "Lola"},
+        {"acao": "curiosa"},
+        {"codinome": "goi"}
+    ],
+    "valores": [
+        {"latitude": -27.6084177},
+        {"longitude": -48.6354691},
+        {"altitude": 80}
+    ]
+}
+
+###
+
+# Requisição válida COMPLETA
+POST http://localhost:5000/gravar
+Content-Type: application/json
+Accept: application/json
+
+{
+    "medida": "ideia",
+    "marcadores": [
+        {"local": "quarto"},
+        {"personagem": "Lola"},
+        {"acao": "curiosa"},
+        {"codinome": "boi"},
+        {"url": "https://arc20201.boidacarapreta.cc"}
     ],
     "valores": [
         {"latitude": -27.6084177},
