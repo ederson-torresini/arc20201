@@ -186,7 +186,7 @@ Accept: application/json
         {"local": "quarto"},
         {"personagem": "Lola"},
         {"acao": "curiosa"},
-        {"codinome": "goi"}
+        {"codinome": "boi"}
     ],
     "valores": [
         {"latitude": -27.6084177},

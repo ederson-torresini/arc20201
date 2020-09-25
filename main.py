@@ -71,7 +71,7 @@ def gravar():
                 resposta = {"Jogador": jogador["nome"],
                             "Primeira Chave": jogador["Primeira Chave"]}
                 msg = "Jogador '" + jogador["nome"] + "'"
-                msg += ", segunda chave é '" + jogador["Segunda Chave"] + "'"
+                msg += ", cuja segunda chave é '" + jogador["Segunda Chave"] + "'"
                 msg += ", entrou na sala " + url
                 msg += " às " + datetime.now().strftime("%H:%M:%S de %d/%m/%Y") + "."
                 notificar(webhook, msg)
