@@ -60,7 +60,7 @@ def gravar():
             # Tentar localizar o jogador
             # Se ele constar na base, alterar a resposta JSON,
             # já que agora o código HTTP é 201.
-            # Ou seja, será retornado ao usuário seu Primeira Chave
+            # Ou seja, será retornado ao usuário sua primeira chave
             # e os professores são notificados
             jogador = localizar_jogador(codinome)
 
@@ -68,10 +68,10 @@ def gravar():
             # e o usuário consta na base de dados a mensagem é atualizada
             # e os professores são notificados
             if validar_codigo == 201 and jogador:
-                resposta = {"Jogador": jogador["nome"],
-                            "Primeira Chave": jogador["Primeira Chave"]}
+                resposta = {"jogador": jogador["nome"],
+                            "chave1": jogador["chave1"]}
                 msg = "Jogador '" + jogador["nome"] + "'"
-                msg += ", cuja segunda chave é '" + jogador["Segunda Chave"] + "'"
+                msg += ", cuja segunda chave é '" + jogador["chave2"] + "'"
                 msg += ", entrou na sala " + url
                 msg += " às " + datetime.now().strftime("%H:%M:%S de %d/%m/%Y") + "."
                 notificar(webhook, msg)

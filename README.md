@@ -10,14 +10,14 @@ Como formato básico do arquivo `jogadores.json`, cada jogador tem o nome, prime
 {
   "jogadores": [
     {
-      "nome": "***",
-      "Primeira Chave": "***",
-      "Segunda Chave": "***"
+      "nome.sobrenome": "***",
+      "chave1": "***",
+      "chave2": "***"
     },
     {
-      "nome": "***",
-      "Primeira Chave": "***",
-      "Segunda Chave": "***"
+      "nome.sobrenome": "***",
+      "chave1": "***",
+      "chave2": "***"
     }
   ]
 }

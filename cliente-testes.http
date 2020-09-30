@@ -208,7 +208,7 @@ Accept: application/json
         {"local": "quarto"},
         {"personagem": "Lola"},
         {"acao": "curiosa"},
-        {"codinome": "boi"},
+        {"codinome": "ederson.torresini"},
         {"url": "https://arc20201.boidacarapreta.cc"}
     ],
     "valores": [
