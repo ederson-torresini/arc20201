@@ -1,7 +1,7 @@
 ###
 
 # Requisição válida (original)
-POST http://api.arc20201.boidacarapreta.cc/gravar
+POST https://api.arc20201.boidacarapreta.cc/gravar
 Content-Type: application/json
 Accept: application/json
 
@@ -22,7 +22,7 @@ Accept: application/json
 ###
 
 # Requisição inválida: cabeçalho não menciona formato
-POST http://api.arc20201.boidacarapreta.cc/gravar
+POST https://api.arc20201.boidacarapreta.cc/gravar
 Accept: application/json
 
 {
@@ -42,7 +42,7 @@ Accept: application/json
 ###
 
 # Requisição inválida: JSON com formato errado
-POST http://api.arc20201.boidacarapreta.cc/gravar
+POST https://api.arc20201.boidacarapreta.cc/gravar
 Content-Type: application/json
 Accept: application/json
 
@@ -62,7 +62,7 @@ Accept: application/json
 ###
 
 # Requisição inválida: falta 'medida'
-POST http://api.arc20201.boidacarapreta.cc/gravar
+POST https://api.arc20201.boidacarapreta.cc/gravar
 Content-Type: application/json
 Accept: application/json
 
@@ -82,7 +82,7 @@ Accept: application/json
 ###
 
 # Requisição inválida: 'medida' com formato errado
-POST http://api.arc20201.boidacarapreta.cc/gravar
+POST https://api.arc20201.boidacarapreta.cc/gravar
 Content-Type: application/json
 Accept: application/json
 
@@ -103,7 +103,7 @@ Accept: application/json
 ###
 
 # Requisição inválida: falta 'valores'
-POST http://api.arc20201.boidacarapreta.cc/gravar
+POST https://api.arc20201.boidacarapreta.cc/gravar
 Content-Type: application/json
 Accept: application/json
 
@@ -119,7 +119,7 @@ Accept: application/json
 ###
 
 # Requisição inválida: 'valores' com formato errado
-POST http://api.arc20201.boidacarapreta.cc/gravar
+POST https://api.arc20201.boidacarapreta.cc/gravar
 Content-Type: application/json
 Accept: application/json
 
@@ -136,7 +136,7 @@ Accept: application/json
 ###
 
 # Requisição inválida: lista 'valores' vazia
-POST http://api.arc20201.boidacarapreta.cc/gravar
+POST https://api.arc20201.boidacarapreta.cc/gravar
 Content-Type: application/json
 Accept: application/json
 
@@ -154,7 +154,7 @@ Accept: application/json
 ###
 
 # Requisição válida, porém sem codinome
-POST http://api.arc20201.boidacarapreta.cc/gravar
+POST https://api.arc20201.boidacarapreta.cc/gravar
 Content-Type: application/json
 Accept: application/json
 
@@ -176,7 +176,7 @@ Accept: application/json
 ###
 
 # Requisição válida, porém sem url
-POST http://api.arc20201.boidacarapreta.cc/gravar
+POST https://api.arc20201.boidacarapreta.cc/gravar
 Content-Type: application/json
 Accept: application/json
 
@@ -198,7 +198,7 @@ Accept: application/json
 ###
 
 # Requisição válida COMPLETA
-POST http://api.arc20201.boidacarapreta.cc/gravar
+POST https://api.arc20201.boidacarapreta.cc/gravar
 Content-Type: application/json
 Accept: application/json
 

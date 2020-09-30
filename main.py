@@ -1,6 +1,6 @@
 from dotenv import load_dotenv
 from os import environ
-from flask import Flask, request, abort
+from flask import Flask, request, abort, jsonify
 from flask_cors import CORS
 from requests import post
 from servidor_validar_json import validar_json
@@ -8,9 +8,9 @@ from servidor_localizar_jogador import localizar_jogador
 from servidor_converter_json_line_protocol import converter_json_line_protocol
 from servidor_escrever import escrever, notificar
 from datetime import datetime
-from json import dumps
 
 app = Flask(__name__)
+app.config['JSON_AS_ASCII'] = False
 CORS(app)
 
 # Se houver um arquivo .env, que é comum em ambientes de desenvolvimento
@@ -51,7 +51,7 @@ def gravar():
         except:
             # Em caso contrário, retornar 400.
             resposta = {"Erro": "JSON inválido"}
-            return dumps(resposta, ensure_ascii=False), 400
+            return jsonify(resposta), 400
         else:
             # Os dados estão em JSON válido.
             # Prosseguindo para validar os campos.
@@ -79,7 +79,7 @@ def gravar():
             # Se algum campo tem problema, retornar 400
             # para o cliente HTTP deste servidor.
             if validar_codigo == 400:
-                return dumps(resposta, ensure_ascii=False), validar_codigo
+                return jsonify(resposta), validar_codigo
             else:
                 # Os dados estão corretos.
                 # Hora de enviar ao banco e retornar à primeira aplicação se a
@@ -90,17 +90,17 @@ def gravar():
                 # O InfluxDB retorna 204 quando a operação é realizada com
                 # sucesso, e retorna uma resposta vazia (No Content).
                 if escrita_codigo == 204:
-                    return dumps(resposta, ensure_ascii=False), validar_codigo
+                    return jsonify(resposta), validar_codigo
                 else:
                     # Ainda há algum problema?
                     # Retornar 500, quando o servidor não sabe o que fazer
                     # (na verdade, é algo que veremos nas próximas aulas :)
-                    return dumps(req, ensure_ascii=False), 500
+                    return jsonify(req), 500
     else:
         # Em caso contrário, retornar 400.
         resposta = {
             "Erro": "Tipo de conteúdo não definido como JSON."}
-        return dumps(resposta, ensure_ascii=False), 400
+        return jsonify(resposta), 400
 
 
 if __name__ == '__main__':
