@@ -16,7 +16,7 @@ def validar_json(dados):
         http_status = 400
     else:
         # 'medida' existe, agora é preciso verificar se é string.
-        if type(dados["medida"]) != str:
+        if type(dados["medida"]) is not str:
             # Em caso contrário, retornar 400.
             resposta = {"Erro": "Campo 'medida' deve ser string."}
             http_status = 400
@@ -48,7 +48,7 @@ def validar_json(dados):
             else:
                 # 'valores' existe, agora é preciso verificar se existe pelo menos
                 # 1 par chave-valor.
-                if type(dados["valores"]) != list or len(dados["valores"]) < 1:
+                if type(dados["valores"]) is not list or len(dados["valores"]) < 1:
                     # Em caso contrário, retornar 400.
                     resposta = {
                         "Erro": "Campo 'valores' deve ser uma lista não vazia."}
