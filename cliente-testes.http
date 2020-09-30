@@ -10,7 +10,7 @@ Accept: application/json
     "marcadores": [
         {"local": "quarto"},
         {"personagem": "Lola"},
-        {"acao": "curiosa"}
+        {"acao": "caminhando"}
     ],
     "valores": [
         {"latitude": -27.6084177},
