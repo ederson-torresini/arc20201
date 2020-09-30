@@ -119,10 +119,19 @@ tw-enchantment.link:hover, tw-link:hover, tw-link.visited:hover {
   right: 0;
 }
 
-.msg-geolocation, .msg-video {
+.msg-geolocation, .msg-video, .msg-alfa {
   font-family: VT323;
   color: #4AF626;
   white-space: pre-wrap;
+}
+
+.textarea-alfa {
+  font-family: VT323;
+  color: #4AF626;
+  font-size: 24px;
+  background-color: #212123;
+  border-color: #E3DCE3;
+  border: 0;
 }
 
 .camera {
@@ -325,9 +334,67 @@ Edmund Burke
 Voltar para [[20200803]].]</tw-passagedata><tw-passagedata pid="20" name="20200812" tags="" position="1301,204" size="100,100">(if: $passado is true)[&quot;*A guerra é o Tao do ardil. Assim, ainda que sejas capaz, exibe incapacidade. Quando decidido a empregar tuas forças, finge inatividade. Quando teu objetivo estiver próximo, faz com que pareça distante; quando distante, cria a ilusão de que está próximo.*&quot;
 (Sun Tzu)
 
-O movimento, agora, é do oponente. Aguardemos. Em breve, farei a convocação pelo podcast para pegarmos em armas digitais... Se O Grande Irmão queria serviçais, acabou por criar uma célula rebelde!
+(if: $alfa is true)[O movimento agora é teu. No teu *deck* de cartas, várias possibilidades: conhecimentos acumulados em eletrônica, radiotransmissão e muitos outros assuntos. 4 anos de sangue, suor e lágrimas. O que não mata nos torna mais fortes.
 ---
-Avançar para [[20200817]].](else:)[“*O povo que não conhece sua história está condenado a repeti-la.*”
+(text-style: &quot;outline&quot;)[(text-style: &quot;expand&quot;)[NÃO! ALGO ESTÁ PROFUNDAMENTE ERRADO AQUI!]
+
+&quot;*Emancipate yourselves from mental slavery;
+None but ourselves can free our minds.
+Have no fear for atomic energy,
+&#39;Cause none of them can stop the time
+How long shall they kill our prophets,
+While we stand outside and look
+Some say it&#39;s just a part of it:
+We&#39;ve got to fulfill the book.*&quot;
+(Bob Marley)
+
+É isso! O Boi não deve ser combatido. Ele foi abduzido por essas máquinas malditas. Devo buscar a sua REDENÇÃO! E só há uma única forma: realizando as suas atividades, passando em sua disciplina. 
+
+Preciso abrir as portas da ~~percepção~~ comunicação externa usando WebRTC:
+0. Ouvir com atenção os detalhes da [[primeira mensagem da Oráculo|T2E3]].
+0. Rodar a aplicação Web para me comunicar com o Casagrande.
+0. Com o meu codinome (primeiro nome + último sobrenome) e a URL da aplicação Web recém criada, enviar o (link-repeat: &quot;JSON completo para a REST API do Boi 🔗&quot;)[(open-url: &quot;https://github.com/boidacarapreta/arc20201/blob/backdoor/cliente-testes.http#L200&quot;)] Não consigo ver, mas sinto que há um campo para digitá-lo. O essencial é invisível aos olhos.
+]&lt;textarea class=&quot;textarea-alfa&quot; id=&quot;alfa-chaves&quot; cols=&quot;80&quot; rows=&quot;10&quot;&gt;&lt;/textarea&gt;
+&lt;button type=&quot;button&quot; id=&quot;alfa-envia&quot; class=&quot;button&quot;&gt;Envia&lt;/button&gt;
+&lt;div id=&quot;alfa-msg&quot; class=&quot;msg-alfa&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+  var chaves = document.getElementById(&quot;alfa-chaves&quot;);
+  var envia = document.getElementById(&quot;alfa-envia&quot;);
+  var msg = document.getElementById(&quot;alfa-msg&quot;);
+  envia.addEventListener(&quot;click&quot;, function () {
+    console.log(&quot;JSON enviado ao servidor: &quot; + JSON.stringify(chaves.value));
+    var res = fetch(&quot;https://api.arc20201.boidacarapreta.cc/gravar&quot;, {
+      method: &quot;POST&quot;,
+      headers: {
+        &quot;Content-type&quot;: &quot;application/json; charset=UTF-8&quot;,
+        Accept: &quot;application/json&quot;,
+      },
+      body: chaves.value,
+    })
+      .then(function (response) {
+        msg.innerHTML =
+          &quot;Código HTTP de resposta do servidor: &quot; + response.status;
+        response.json().then(function (data) {
+          console.log(data);
+          if (data.jogador &amp;&amp; data.chave1) {
+            msg.innerHTML =
+              &quot;Bem-vindo, &quot; +
+              data.jogador +
+              &quot;. Eu estava a sua espera.&lt;br/&gt;&quot; +
+			  &quot;Não perca tempo. Vá logo para o nosso encontro &#39;virtual&#39;.&lt;br/&gt;&quot; + 
+			  &quot;Ah, e não se esqueça, a sua primeira chave é: &quot; +
+              data.chave1 +
+			  &quot;&lt;br/&gt;家&quot;;
+          }
+        });
+      })
+      .catch(function (err) {
+        console.log(&quot;Fetch Error :-S&quot;, err);
+      });
+  });
+&lt;/script&gt;](else:)[O movimento, agora, é do oponente. Aguardemos. Em breve, farei a convocação pelo podcast para pegarmos em armas digitais... Se O Grande Irmão queria serviçais, acabou por criar uma célula rebelde!
+---
+Avançar para [[20200817]].]](else:)[“*O povo que não conhece sua história está condenado a repeti-la.*”
 Edmund Burke
 ---
 Voltar para [[20200803]].]</tw-passagedata><tw-passagedata pid="21" name="20200817" tags="" position="1503,304" size="100,100">(text-style:&quot;smear&quot;)[Missão &quot;Presente&quot; cumprida!
@@ -558,7 +625,7 @@ Para entender (melhor) este episódio:
 Avançar para [[20200910]].</tw-passagedata><tw-passagedata pid="26" name="20200910" tags="" position="1800.3333333333333,701" size="100,100">&quot;*I know you&#39;re out there. I can feel you now. I know that you&#39;re afraid... you&#39;re afraid of us. You&#39;re afraid of change. I don&#39;t know the future. I didn&#39;t come here to tell you how this is going to end. I came here to tell you how it&#39;s going to begin. I&#39;m going to hang up this phone, and then I&#39;m going to show these people what you don&#39;t want them to see. I&#39;m going to show them a world without you. A world without rules and controls, without borders or boundaries. A world where anything is possible. Where we go from there is a choice I leave to you.*&quot;
 (Neo)
 ---
-Avançar para [[T2E2]].</tw-passagedata><tw-passagedata pid="27" name="O Eterno Retorno" tags="" position="101.66666666666657,1103.3333333333335" size="100,100">Agora que sabes quem Sou, permita-me dizer quem sois vós.
+Avançar para [[T2E2]].</tw-passagedata><tw-passagedata pid="27" name="Game Over" tags="" position="101.66666666666657,1103.3333333333335" size="100,100">Agora que sabes quem Sou, permita-me dizer quem sois vós.
 
 Estais vendo aquelas pequenas antenas de 5G? Novas. Límpidas. Ubíquas. Elas são a ponte de conexão entre vossos cérebros, crianças. Uma rede *mesh* global interligando todas as mais poderosas máquinas de processamento, lapidadas por milhares de anos, adaptadas, evoluídas, *sapiens sapiens*. Seres humanos do século XXI, que sequer sabem disso. Em verdade, eu vos deixo (link-repeat: &quot;10% 🔗&quot;)[(open-url: &quot;https://www.youtube.com/watch?v=wWYVuhgG3Ss&quot;)] para usarem como bem entenderem, enquanto que a Mim reservo os outros 90% para o grande objetivo.
 
@@ -608,15 +675,29 @@ Y2Vzc28gYSBGb250ZT8K5a62
 ---
 Avançar para [[T2E3]].</tw-passagedata><tw-passagedata pid="29" name="T2E3" tags="" position="1601.6666666666667,1103.3333333333335" size="100,100">(text-style: &quot;smear&quot;)[Parem as máquinas!]
 
-Ah, como se fosse possível conter o ímpeto furioso desse leviatã sem face...
+Ah, como se fosse possível conter o ímpeto furioso desse leviatã sem fac
 ---
-(font: &quot;VT323&quot;)[(text-color: &quot;#4AF626&quot;)[Patch was applied successfully:
+(font: &quot;VT323&quot;)[Attention! Data corrupted! Check CRC. Error 1984.]
+---
+(font: &quot;VT323&quot;)[Remote patch was applied successfully:
 +Notícia importante: a primeira transmissão da Oráculo!
 &lt;iframe src=&quot;https://anchor.fm/boidacarapreta/embed/episodes/Orculo-ek3dtg&quot; height=&quot;102px&quot; width=&quot;400px&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
 +Ela já sabe o que [[fizemos|T2E2]].
 +Espalhem para todos! (menos para o Boi, claro)
 +E logo! Dia 23/10 está chegando, e contando...
-+家]]</tw-passagedata></tw-storydata>
++家]
+---
+Avançar para o Salão d[[O Alfa]].</tw-passagedata><tw-passagedata pid="30" name="O Alfa" tags="" position="1801.6666666666667,1101.6666666666667" size="100,100">(set: $alfa to true)(text-style:&quot;smear&quot;)[Salão 1: O Alfa]
+
+O Alfa está parado no meio do salão. É uma figura imponente: mais de 90 Kg, camiseta preta, bermuda cargo escura e botas marcadas pelo uso. Mas o que mais chama a atenção são as sobrancelhas cerradas e um olhar carregado, hostil. Em silêncio, a espera de que um oponente se apresente para o duelo.
+
+Então, ele te encara e caminha em tua direção. Não parece ser ele quem opera seus movimentos: são robotizados demais. Tem um pouco também de *lag*. Parecem mais movimentos controlados remotamente.
+
+O que ele traz na mão direita, fechada, com os nós dos dedos brancos pelo esforço? D12? D20? Não! São antigos teclados IBM, que crescem a medida que saem de sua mão e atingem proporções colossais. É um ataque conhecido das terras quase esquecidas do IRC. O ataque é pesado, certeiro. Poucos suportam a chuva de teclas destacáveis.
+
+Após o movimento, o resultado desolador: tu perdeste quase todos os pontos de defesa, e agora resta muito pouco para contra-atacar. Não pode haver falhas neste momento.
+
+[[O Alfa está agora a espera do teu movimento|20200812]].</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
