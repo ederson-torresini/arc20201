@@ -9,8 +9,8 @@ Accept: application/json
     "medida": "ideia",
     "marcadores": [
         {"local": "quarto"},
-        {"personagem": "Lola"},
-        {"acao": "caminhando"}
+        {"personagem": "Matias"},
+        {"acao": "sonhando"}
     ],
     "valores": [
         {"latitude": -27.6084177},
