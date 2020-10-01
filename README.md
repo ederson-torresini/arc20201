@@ -39,3 +39,16 @@ Uma vez criadas as variáveis de ambiente, o Gitpod rodará o cliente em Python 
 Este repositório está preparado para rodar o código em modo depuração, com o objetivo de facilitar o desenvolvimento. Basta adicionar a URL deste respositório a `https://gitpod.io/#` para abrir no Gitpod.
 
 Por exemplo, o repositório modelo `boidacarapreta/arc20201` fica assim: `https://gitpod.io/#https://github.com/boidacarapreta/arc20201` (com dois `https` mesmo).
+
+## Passo quatro: autorizar o Gitpod a escrever no repositório
+
+O Gitpod precisa de acesso de leitura e de escrita no repositório. Na página de controle de acesso ([https://gitpod.io/access-control](https://gitpod.io/access-control)), deve-se adicionar as seguintes permissões para o GitHub:
+
+- `read email addresses` (já deve estar marcado)
+- `write public repos` (este é essencial)
+
+As demais permissões são opcionais. Na figura a seguir, uma sugestão de permissões:
+
+![Gitpod: access control](gitpod-access-control.png)
+
+Feito isto, pode-se usar a interface do Gitpod para criação de versão local (`git commit`) e sincronização com repositórios remotos como o próprio GitHub (`git pull` e `git push`).
