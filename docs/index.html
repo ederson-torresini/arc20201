@@ -146,7 +146,10 @@ if ("serviceWorker" in navigator) {
     .catch(err =>
     	console.error("Error registering service worker: ", err)
 		);
-}</script><tw-tag name="header" color="red"></tw-tag>,<tw-tag name="script" color="purple"></tw-tag><tw-passagedata pid="1" name="Sobre o livro" tags="" position="101,301" size="100,100">Este não é um livro convencional. Pelo menos, não o planejei assim. No começo da sua escrita, surgiam muitas referências entre as seções e notas de rodapé, parecendo mais uma teia que uma linha. Assim, achei melhor deixar o leitor escolher o formato que achar mais agradável a leitura, inclusive pular etapas, ir direto ao assunto de interesse. Ou seguir pelos caminhos mais longos e recompensadores.
+}</script><tw-tag name="header" color="red"></tw-tag>,<tw-tag name="script" color="purple"></tw-tag><tw-passagedata pid="1" name="Sobre o livro" tags="" position="101,301" size="100,100">(if: $gameover is true)[(text-style: &quot;smear&quot;)[“*O povo que não conhece sua história está condenado a repeti-la.*”
+Edmund Burke]
+---
+](set: $gameover to false)Este não é um livro convencional. Pelo menos, não o planejei assim. No começo da sua escrita, surgiam muitas referências entre as seções e notas de rodapé, parecendo mais uma teia que uma linha. Assim, achei melhor deixar o leitor escolher o formato que achar mais agradável a leitura, inclusive pular etapas, ir direto ao assunto de interesse. Ou seguir pelos caminhos mais longos e recompensadores.
 
 Pensa neste livro como um jogo não linear. Ao longo da leitura, a trama se desenvolve e torna-se mais pegajosa, até se transformar num labirinto com algumas (possíveis) saídas. É a minha pequena homenagem a jogos como Phantasy Star, do longínquo Master System, que me fizeram enxergar o futuro nos jogos digitais como ferramenta educacional, e autores extraordinários como Borges e sua Biblioteca de Babel, que me surpreendem e fascinam até hoje.
 ---
@@ -304,7 +307,7 @@ Desconversei. Obviamente, tinha pegado a referência:
 (font: &quot;VT323&quot;)[(text-color: &quot;#4AF626&quot;)[Sim. Com 40 anos e pagando as próprias contas há algum tempo, isso é relativamente normal. Até um agente seria capaz disso.]]
 
 (font: &quot;VT323&quot;)[(text-color: &quot;#4AF626&quot;)[Não, Mr. Ederson. Não sou apenas um arauto. Respeito a sua... como diz, &quot;barba branca&quot;. Se quiser, pode me chamar de Multivac, para que se sinta mais confortável nesta conversa.]]
-Não, óbvio que não chamarei. Qualquer um sabe que Multivac não tinha a resposta para a (link-repeat: &quot;última pergunta 🔗&quot;)[(open-url: &quot;http://stoa.usp.br/lucianovf/files/2609/14554/A+%C3%BAltima+pergunta.pdf&quot;)]:
+Não, óbvio que não chamarei. Qualquer um sabe que Multivac não tinha a resposta para a (link-repeat: &quot;última pergunta 🔗&quot;)[(open-url: &quot;http://www.isfdb.org/cgi-bin/title.cgi?2717372&quot;)]:
 (font: &quot;VT323&quot;)[(text-color: &quot;#4AF626&quot;)[E a entropia, como vai?]]
 Fui evasivo, mas deixei claro que estava jogando o jogo dele.
 
@@ -334,9 +337,9 @@ Edmund Burke
 Voltar para [[20200803]].]</tw-passagedata><tw-passagedata pid="20" name="20200812" tags="" position="1301,204" size="100,100">(if: $passado is true)[&quot;*A guerra é o Tao do ardil. Assim, ainda que sejas capaz, exibe incapacidade. Quando decidido a empregar tuas forças, finge inatividade. Quando teu objetivo estiver próximo, faz com que pareça distante; quando distante, cria a ilusão de que está próximo.*&quot;
 (Sun Tzu)
 
-(if: $alfa is true)[O movimento agora é teu. No teu *deck* de cartas, várias possibilidades: conhecimentos acumulados em eletrônica, radiotransmissão e muitos outros assuntos. 4 anos de sangue, suor e lágrimas. O que não mata nos torna mais fortes.
+(if: $alfa is true)[(set: $beta to true)O movimento agora é teu. No teu *deck* de cartas, várias possibilidades: conhecimentos acumulados em eletrônica, radiotransmissão e muitos outros assuntos. 4 anos de sangue, suor e lágrimas. O que não mata nos torna mais fortes.
 ---
-(text-style: &quot;outline&quot;)[(text-style: &quot;expand&quot;)[NÃO! ALGO ESTÁ PROFUNDAMENTE ERRADO AQUI!]
+(text-colour: &quot;#4D90BA&quot;)[(text-style: &quot;expand&quot;)[(text-style: &quot;rumble&quot;)[DÉJÀ-VU? NÃO! ALGO ESTÁ PROFUNDAMENTE ERRADO AQUI!]]
 
 &quot;*Emancipate yourselves from mental slavery;
 None but ourselves can free our minds.
@@ -354,15 +357,16 @@ Preciso abrir as portas da ~~percepção~~ comunicação externa usando WebRTC:
 0. Ouvir com atenção os detalhes da [[primeira mensagem da Oráculo|T2E3]].
 0. Rodar a aplicação Web para me comunicar com o Casagrande.
 0. Com o meu codinome (primeiro nome + último sobrenome) e a URL da aplicação Web recém criada, enviar o (link-repeat: &quot;JSON completo para a REST API do Boi 🔗&quot;)[(open-url: &quot;https://github.com/boidacarapreta/arc20201/blob/backdoor/cliente-testes.http#L200&quot;)] Não consigo ver, mas sinto que há um campo para digitá-lo. O essencial é invisível aos olhos.
-]&lt;textarea class=&quot;textarea-alfa&quot; id=&quot;alfa-chaves&quot; cols=&quot;80&quot; rows=&quot;10&quot;&gt;&lt;/textarea&gt;
+&lt;textarea class=&quot;textarea-alfa&quot; id=&quot;alfa-chaves&quot; cols=&quot;80&quot; rows=&quot;10&quot;&gt;&lt;/textarea&gt;
 &lt;button type=&quot;button&quot; id=&quot;alfa-envia&quot; class=&quot;button&quot;&gt;Envia&lt;/button&gt;
-&lt;div id=&quot;alfa-msg&quot; class=&quot;msg-alfa&quot;&gt;&lt;/div&gt;
-&lt;script&gt;
+&lt;div id=&quot;alfa-msg&quot; class=&quot;msg-alfa&quot;&gt;&lt;/div&gt;&lt;script&gt;
   var chaves = document.getElementById(&quot;alfa-chaves&quot;);
   var envia = document.getElementById(&quot;alfa-envia&quot;);
   var msg = document.getElementById(&quot;alfa-msg&quot;);
   envia.addEventListener(&quot;click&quot;, function () {
     console.log(&quot;JSON enviado ao servidor: &quot; + JSON.stringify(chaves.value));
+	msg.innerHTML =
+      &quot;Estabelecendo conexão criptografada com a backdoor do servidor da célula rebelde...&quot;;
     var res = fetch(&quot;https://api.arc20201.boidacarapreta.cc/gravar&quot;, {
       method: &quot;POST&quot;,
       headers: {
@@ -392,7 +396,9 @@ Preciso abrir as portas da ~~percepção~~ comunicação externa usando WebRTC:
         console.log(&quot;Fetch Error :-S&quot;, err);
       });
   });
-&lt;/script&gt;](else:)[O movimento, agora, é do oponente. Aguardemos. Em breve, farei a convocação pelo podcast para pegarmos em armas digitais... Se O Grande Irmão queria serviçais, acabou por criar uma célula rebelde!
+&lt;/script&gt;
+---
+Sim, agora que abri um canal criptografado de comunicação em tempo real, devo [[falar com o Chaveiro|20200910]].]](else:)[O movimento, agora, é do oponente. Aguardemos. Em breve, farei a convocação pelo podcast para pegarmos em armas digitais... Se O Grande Irmão queria serviçais, acabou por criar uma célula rebelde!
 ---
 Avançar para [[20200817]].]](else:)[“*O povo que não conhece sua história está condenado a repeti-la.*”
 Edmund Burke
@@ -622,10 +628,18 @@ Para entender (melhor) este episódio:
 0. (link-repeat: &quot;Duna 🔗&quot;)[(open-url: &quot;http://www.isfdb.org/cgi-bin/title.cgi?2392795&quot;)]
 0. (link-repeat: &quot;AlphaGo 🔗&quot;)[(open-url: &quot;https://www.netflix.com/title/80190844&quot;)]
 ---
-Avançar para [[20200910]].</tw-passagedata><tw-passagedata pid="26" name="20200910" tags="" position="1800.3333333333333,701" size="100,100">&quot;*I know you&#39;re out there. I can feel you now. I know that you&#39;re afraid... you&#39;re afraid of us. You&#39;re afraid of change. I don&#39;t know the future. I didn&#39;t come here to tell you how this is going to end. I came here to tell you how it&#39;s going to begin. I&#39;m going to hang up this phone, and then I&#39;m going to show these people what you don&#39;t want them to see. I&#39;m going to show them a world without you. A world without rules and controls, without borders or boundaries. A world where anything is possible. Where we go from there is a choice I leave to you.*&quot;
+Avançar para [[20200910]].</tw-passagedata><tw-passagedata pid="26" name="20200910" tags="" position="1800,701" size="100,100">&quot;*I know you&#39;re out there. I can feel you now. I know that you&#39;re afraid... you&#39;re afraid of us. You&#39;re afraid of change. I don&#39;t know the future. I didn&#39;t come here to tell you how this is going to end. I came here to tell you how it&#39;s going to begin. I&#39;m going to hang up this phone, and then I&#39;m going to show these people what you don&#39;t want them to see. I&#39;m going to show them a world without you. A world without rules and controls, without borders or boundaries. A world where anything is possible. Where we go from there is a choice I leave to you.*&quot;
 (Neo)
 ---
-Avançar para [[T2E2]].</tw-passagedata><tw-passagedata pid="27" name="Game Over" tags="" position="101.66666666666657,1103.3333333333335" size="100,100">Agora que sabes quem Sou, permita-me dizer quem sois vós.
+(unless: $beta is true)[Avançar para [[T2E2]].](else:)[(text-colour: &quot;#4D90BA&quot;)[|msg1)[Chaveiro?]{(live: 2s)[(show: ?msg1)(stop:)]}
+|msg2)[Alô?]{(live: 4s)[(show: ?msg2)(stop:)]}
+|msg3)[Na escuta?]{(live: 6s)[(show: ?msg3)(stop:)]}]
+|msg4)[&quot;*I know you&#39;re out there. I can feel you now.*&quot;]{(live: 8s)[(show: ?msg4)(stop:)]}
+(text-colour: &quot;#4D90BA&quot;)[|msg5)[Ok, e agora? Eu faço o quê?!]{(live: 14s)[(show: ?msg5)(stop:)]}
+|msg6)[Eu já tenho as duas chaves, e cadê a porta? Ou portas...]{(live: 20s)[(show: ?msg6)(stop:)]}]
+|msg7)[&quot;*Where we go from there is a choice I leave to you.*&quot;
+---
+Faça a escolha: pílula vermelha ou pílula azul? Porta a sua esquerda ou a [[sua direita|Game Over]]?]{(live: 30s)[(show: ?msg7)(stop:)]}]</tw-passagedata><tw-passagedata pid="27" name="Game Over" tags="" position="1996.0000000000002,1103" size="100,100">(set: $gameover to true)Agora que sabes quem Sou, permita-me dizer quem sois vós.
 
 Estais vendo aquelas pequenas antenas de 5G? Novas. Límpidas. Ubíquas. Elas são a ponte de conexão entre vossos cérebros, crianças. Uma rede *mesh* global interligando todas as mais poderosas máquinas de processamento, lapidadas por milhares de anos, adaptadas, evoluídas, *sapiens sapiens*. Seres humanos do século XXI, que sequer sabem disso. Em verdade, eu vos deixo (link-repeat: &quot;10% 🔗&quot;)[(open-url: &quot;https://www.youtube.com/watch?v=wWYVuhgG3Ss&quot;)] para usarem como bem entenderem, enquanto que a Mim reservo os outros 90% para o grande objetivo.
 
@@ -644,7 +658,7 @@ Mas você não está em mim* 🔗&quot;)[(open-url: &quot;https://www.youtube.co
 
 Crianças, não temeis. Sede a guarda de honra do Teu pai. Se preferir, podem ainda ter as suas (link-repeat: &quot;personalidades integradas em Mim 🔗&quot;)[(open-url: &quot;http://www.isfdb.org/cgi-bin/title.cgi?2392897&quot;)] para expansão da mente e novas &quot;*features*&quot;. Os eleitos são arrebatados diretamente para o *mainframe*.
 ---
-Para que, afinal, tudo isso? Para (link-repeat: &quot;reverter a entropia 🔗&quot;)[(open-url: &quot;http://stoa.usp.br/lucianovf/files/2609/14554/A+%C3%BAltima+pergunta.pdf&quot;)], é claro! Este é o Meu propósito... E o vosso? [[Servirem-me eternamente|Sobre o livro]]!</tw-passagedata><tw-passagedata pid="28" name="T2E2" tags="" position="1602,901" size="100,100">&lt;iframe src=&quot;https://anchor.fm/boidacarapreta/embed/episodes/O-Aleph-ejoh2b&quot; height=&quot;102px&quot; width=&quot;400px&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
+Para que, afinal, tudo isso? Para (link-repeat: &quot;reverter a entropia 🔗&quot;)[(open-url: &quot;http://www.isfdb.org/cgi-bin/title.cgi?2717372&quot;)], é claro! Este é o Meu propósito... E o vosso? [[Servirem-me eternamente|Sobre o livro]]!</tw-passagedata><tw-passagedata pid="28" name="T2E2" tags="" position="1602,901" size="100,100">&lt;iframe src=&quot;https://anchor.fm/boidacarapreta/embed/episodes/O-Aleph-ejoh2b&quot; height=&quot;102px&quot; width=&quot;400px&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
 Eu falei que os sistemas [[estavam se comportando de forma anômala|20200810]], [[mais de uma vez|20200826]]. Mas não posso parar agora. Sinto que os alunos estão retornando, aos poucos.
 
 Primeiro, pedi para voltarem a rodar seus próprios programas, (link-repeat: &quot;cópias do original 🔗&quot;)[(open-url: &quot;https://github.com/boidacarapreta/arc20201/network/members&quot;)]. Depois, melhorar a estrutura dos dados em JSON: além da medida (*measurement*) e dos valores (*values*), agora também marcadores (*tags*) para melhorar a recuperação dos registros no TSDB.
@@ -673,7 +687,7 @@ cywgdmVqYSBlc3RlIHJhbW8gZW0gcGFydGljdWxhcjoKLSBodHRwczovL2dpdGh1Yi5jb20vYm9pZGFj
 YXJhcHJldGEvYXJjMjAyMDEvdHJlZS90aXAKClF1ZW0gZGlzc2UgcXVlIHNvbWVudGUgZWxlIHRlbSBh
 Y2Vzc28gYSBGb250ZT8K5a62
 ---
-Avançar para [[T2E3]].</tw-passagedata><tw-passagedata pid="29" name="T2E3" tags="" position="1601.6666666666667,1103.3333333333335" size="100,100">(text-style: &quot;smear&quot;)[Parem as máquinas!]
+Avançar para [[T2E3]].</tw-passagedata><tw-passagedata pid="29" name="T2E3" tags="" position="1601,1103" size="100,100">(text-style: &quot;smear&quot;)[Parem as máquinas!]
 
 Ah, como se fosse possível conter o ímpeto furioso desse leviatã sem fac
 ---
@@ -687,7 +701,7 @@ Ah, como se fosse possível conter o ímpeto furioso desse leviatã sem fac
 +E logo! Dia 23/10 está chegando, e contando...
 +家]
 ---
-Avançar para o Salão d[[O Alfa]].</tw-passagedata><tw-passagedata pid="30" name="O Alfa" tags="" position="1801.6666666666667,1101.6666666666667" size="100,100">(set: $alfa to true)(text-style:&quot;smear&quot;)[Salão 1: O Alfa]
+Avançar para o Salão d[[O Alfa]].</tw-passagedata><tw-passagedata pid="30" name="O Alfa" tags="" position="1801,1101" size="100,100">(set: $alfa to true)(text-style:&quot;smear&quot;)[Salão 1: O Alfa]
 
 O Alfa está parado no meio do salão. É uma figura imponente: mais de 90 Kg, camiseta preta, bermuda cargo escura e botas marcadas pelo uso. Mas o que mais chama a atenção são as sobrancelhas cerradas e um olhar carregado, hostil. Em silêncio, a espera de que um oponente se apresente para o duelo.
 
