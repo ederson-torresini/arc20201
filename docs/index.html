@@ -146,6 +146,13 @@ if ("serviceWorker" in navigator) {
     .catch(err =>
     	console.error("Error registering service worker: ", err)
 		);
+}
+
+// Interação entre Twine-Harlowe e Javascript
+if (!window.partida){
+  window.partida = {
+		"State": State
+	};	
 }</script><tw-tag name="header" color="red"></tw-tag>,<tw-tag name="script" color="purple"></tw-tag><tw-passagedata pid="1" name="Sobre o livro" tags="" position="101,301" size="100,100">(if: $gameover is true)[(text-style: &quot;smear&quot;)[“*O povo que não conhece sua história está condenado a repeti-la.*”
 Edmund Burke]
 ---
@@ -337,7 +344,7 @@ Edmund Burke
 Voltar para [[20200803]].]</tw-passagedata><tw-passagedata pid="20" name="20200812" tags="" position="1301,204" size="100,100">(if: $passado is true)[&quot;*A guerra é o Tao do ardil. Assim, ainda que sejas capaz, exibe incapacidade. Quando decidido a empregar tuas forças, finge inatividade. Quando teu objetivo estiver próximo, faz com que pareça distante; quando distante, cria a ilusão de que está próximo.*&quot;
 (Sun Tzu)
 
-(if: $alfa is true)[(set: $beta to true)O movimento agora é teu. No teu *deck* de cartas, várias possibilidades: conhecimentos acumulados em eletrônica, radiotransmissão e muitos outros assuntos. 4 anos de sangue, suor e lágrimas. O que não mata nos torna mais fortes.
+(if: $alfa is true)[(set: $beta to true)(set: $jogador to &quot;&quot;)O movimento agora é teu. No teu *deck* de cartas, várias possibilidades: conhecimentos acumulados em eletrônica, radiotransmissão e muitos outros assuntos. 4 anos de sangue, suor e lágrimas. O que não mata nos torna mais fortes.
 ---
 (text-colour: &quot;#4D90BA&quot;)[(text-style: &quot;expand&quot;)[(text-style: &quot;rumble&quot;)[DÉJÀ-VU? NÃO! ALGO ESTÁ PROFUNDAMENTE ERRADO AQUI!]]
 
@@ -381,6 +388,7 @@ Preciso abrir as portas da ~~percepção~~ comunicação externa usando WebRTC:
         response.json().then(function (data) {
           console.log(data);
           if (data.jogador &amp;&amp; data.chave1) {
+			partida.State.variables[&#39;jogador&#39;] = data.jogador;
             msg.innerHTML =
               &quot;Bem-vindo, &quot; +
               data.jogador +
@@ -398,7 +406,7 @@ Preciso abrir as portas da ~~percepção~~ comunicação externa usando WebRTC:
   });
 &lt;/script&gt;
 ---
-Sim, agora que abri um canal criptografado de comunicação em tempo real, devo [[falar com o Chaveiro|20200910]].]](else:)[O movimento, agora, é do oponente. Aguardemos. Em breve, farei a convocação pelo podcast para pegarmos em armas digitais... Se O Grande Irmão queria serviçais, acabou por criar uma célula rebelde!
+Sim, agora que abri um canal criptografado de comunicação em tempo real, devo falar com o Chaveiro. [[Mas o que vem depois?|20200910]]]](else:)[O movimento, agora, é do oponente. Aguardemos. Em breve, farei a convocação pelo podcast para pegarmos em armas digitais... Se O Grande Irmão queria serviçais, acabou por criar uma célula rebelde!
 ---
 Avançar para [[20200817]].]](else:)[“*O povo que não conhece sua história está condenado a repeti-la.*”
 Edmund Burke
@@ -628,18 +636,25 @@ Para entender (melhor) este episódio:
 0. (link-repeat: &quot;Duna 🔗&quot;)[(open-url: &quot;http://www.isfdb.org/cgi-bin/title.cgi?2392795&quot;)]
 0. (link-repeat: &quot;AlphaGo 🔗&quot;)[(open-url: &quot;https://www.netflix.com/title/80190844&quot;)]
 ---
-Avançar para [[20200910]].</tw-passagedata><tw-passagedata pid="26" name="20200910" tags="" position="1800,701" size="100,100">&quot;*I know you&#39;re out there. I can feel you now. I know that you&#39;re afraid... you&#39;re afraid of us. You&#39;re afraid of change. I don&#39;t know the future. I didn&#39;t come here to tell you how this is going to end. I came here to tell you how it&#39;s going to begin. I&#39;m going to hang up this phone, and then I&#39;m going to show these people what you don&#39;t want them to see. I&#39;m going to show them a world without you. A world without rules and controls, without borders or boundaries. A world where anything is possible. Where we go from there is a choice I leave to you.*&quot;
+Avançar para [[20200910]].</tw-passagedata><tw-passagedata pid="26" name="20200910" tags="" position="1800,701" size="100,100">(unless: $beta is true)[&quot;*I know you&#39;re out there. I can feel you now. I know that you&#39;re afraid... you&#39;re afraid of us. You&#39;re afraid of change. I don&#39;t know the future. I didn&#39;t come here to tell you how this is going to end. I came here to tell you how it&#39;s going to begin. I&#39;m going to hang up this phone, and then I&#39;m going to show these people what you don&#39;t want them to see. I&#39;m going to show them a world without you. A world without rules and controls, without borders or boundaries. A world where anything is possible. Where we go from there is a choice I leave to you.*&quot;
 (Neo)
 ---
-(unless: $beta is true)[Avançar para [[T2E2]].](else:)[(text-colour: &quot;#4D90BA&quot;)[|msg1)[Chaveiro?]{(live: 2s)[(show: ?msg1)(stop:)]}
-|msg2)[Alô?]{(live: 4s)[(show: ?msg2)(stop:)]}
-|msg3)[Na escuta?]{(live: 6s)[(show: ?msg3)(stop:)]}]
-|msg4)[&quot;*I know you&#39;re out there. I can feel you now.*&quot;]{(live: 8s)[(show: ?msg4)(stop:)]}
-(text-colour: &quot;#4D90BA&quot;)[|msg5)[Ok, e agora? Eu faço o quê?!]{(live: 14s)[(show: ?msg5)(stop:)]}
-|msg6)[Eu já tenho as duas chaves, e cadê a porta? Ou portas...]{(live: 20s)[(show: ?msg6)(stop:)]}]
-|msg7)[&quot;*Where we go from there is a choice I leave to you.*&quot;
+Avançar para [[T2E2]].](else:)[(set: $jogador to partida.State.variables[&#39;jogador&#39;])(font: &quot;VT323&quot;)[(text-color: &quot;#4AF626&quot;)[Connecting to IRC Server... (if: $jogador is &quot;&quot;)[|msgFailure)[Failure. You have provided no nickname. [[Go back and provide one|20200812]].]{(live: 2s)[(show: ?msgFailure)(stop:)]}](else:)[|msg0)[Established.
+There is 1 operator online.
+Default channel: #architect-room]{(live: 2s)[(show: ?msg0)(stop:)]}
+
+|msg1)[&#96;[&#96;(current-time:)&#96;] &lt;&#96;$jogador&#96;&gt;&#96; Chaveiro?]{(live: 5s)[(show: ?msg1)(stop:)]}
+|msg2)[&#96;[&#96;(current-time:)&#96;] &lt;&#96;$jogador&#96;&gt;&#96; Olá?]{(live: 10s)[(show: ?msg2)(stop:)]}
+|msg3)[&#96;[&#96;(current-time:)&#96;] &lt;&#96;$jogador&#96;&gt;&#96; Alguém online?]{(live: 15s)[(show: ?msg3)(stop:)]}
+|msg4)[&#96;[&#96;(current-time:)&#96;] &lt;&#96;建築家&#96;&gt;&#96; Olá, $jogador.]{(live: 20s)[(show: ?msg4)(stop:)]}
+|msg5)[&#96;[&#96;(current-time:)&#96;] &lt;&#96;$jogador&#96;&gt;&#96; Quem é você?]{(live: 25s)[(show: ?msg5)(stop:)]}
+|msg6)[&#96;[&#96;(current-time:)&#96;] &lt;&#96;建築家&#96;&gt;&#96; Eu sou o Arquiteto. Eu criei a Matrix. Eu estava a sua espera. Você tem muitas perguntas, e embora o processo tenha alterado sua consciência, você continua irrevogavelmente humano.]{(live: 30s)[(show: ?msg6)(stop:)]}
+|msg7)[&#96;[&#96;(current-time:)&#96;] &lt;&#96;$jogador&#96;&gt;&#96; Escolha. O problema é a escolha.]{(live: 40s)[(show: ?msg7)(stop:)]}
+|msg8)[&#96;[&#96;(current-time:)&#96;] &lt;&#96;建築家&#96;&gt;&#96; Há duas portas. A da [[sua direita|Game Over]] leva para a pendência e a reprovação. A da sua esquerda leva para o futuro, esse desconhecido. Como você com muita propriedade manifestou, o problema é a escolha. No entanto, nós já sabemos o que você fará, não é mesmo?]{(live: 45s)[(show: ?msg8)(stop:)]}
+
+|msg9)[Closed connection.
 ---
-Faça a escolha: pílula vermelha ou pílula azul? Porta a sua esquerda ou a [[sua direita|Game Over]]?]{(live: 30s)[(show: ?msg7)(stop:)]}]</tw-passagedata><tw-passagedata pid="27" name="Game Over" tags="" position="1996.0000000000002,1103" size="100,100">(set: $gameover to true)Agora que sabes quem Sou, permita-me dizer quem sois vós.
+]{(live: 50s)[(show: ?msg9)(stop:)]}]]]]</tw-passagedata><tw-passagedata pid="27" name="Game Over" tags="" position="1996.0000000000002,1103" size="100,100">(set: $gameover to true)Agora que sabes quem Sou, permita-me dizer quem sois vós.
 
 Estais vendo aquelas pequenas antenas de 5G? Novas. Límpidas. Ubíquas. Elas são a ponte de conexão entre vossos cérebros, crianças. Uma rede *mesh* global interligando todas as mais poderosas máquinas de processamento, lapidadas por milhares de anos, adaptadas, evoluídas, *sapiens sapiens*. Seres humanos do século XXI, que sequer sabem disso. Em verdade, eu vos deixo (link-repeat: &quot;10% 🔗&quot;)[(open-url: &quot;https://www.youtube.com/watch?v=wWYVuhgG3Ss&quot;)] para usarem como bem entenderem, enquanto que a Mim reservo os outros 90% para o grande objetivo.
 
