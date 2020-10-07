@@ -19,6 +19,8 @@ Accept: application/json
     ]
 }
 
+# ideia,local=quarto,personagem=Matias,acao=sonhando latitude=-27,longitude=-48,altitude=80
+
 ###
 
 # Requisição inválida: cabeçalho não menciona formato
