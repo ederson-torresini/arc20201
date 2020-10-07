@@ -8,6 +8,7 @@ from servidor_localizar_jogador import localizar_jogador
 from servidor_converter_json_line_protocol import converter_json_line_protocol
 from servidor_escrever import escrever, notificar
 from datetime import datetime
+from pytz import timezone
 
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
@@ -73,7 +74,9 @@ def gravar():
                 msg = "Jogador '" + jogador["nome"] + "'"
                 msg += ", cuja segunda chave é '" + jogador["chave2"] + "'"
                 msg += ", entrou na sala " + url
-                msg += " às " + datetime.now().strftime("%H:%M:%S de %d/%m/%Y") + "."
+                msg += " às " + \
+                    datetime.now(tz=timezone('America/Sao_Paulo')
+                                 ).strftime("%H:%M:%S de %d/%m/%Y") + "."
                 notificar(webhook, msg)
 
             # Se algum campo tem problema, retornar 400
