@@ -165,7 +165,7 @@ Accept: application/json
     "marcadores": [
         {"local": "quarto"},
         {"personagem": "Lola"},
-        {"acao": "curiosa"}
+        {"url": "https://github.com/boidacarapreta/arc20201"}
     ],
     "valores": [
         {"latitude": -27.6084177},
