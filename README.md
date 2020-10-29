@@ -130,4 +130,4 @@ Como formato básico do arquivo `jogadores.json`, cada jogador tem o nome, prime
 
 ## Passo um: publicar o código
 
-Este código foi pensado para rodar em PaaS. Atualmente, está em produção na [Google App Engine](https://cloud.google.com/appengine): [https://api.arc20201.boidacarapreta.cc](https://api.arc20201.boidacarapreta.cc).
+Este código foi pensado para rodar em PaaS, mais especificamente a [Google App Engine](https://cloud.google.com/appengine) - originalmente com a URL `https://api.arc20201.boidacarapreta.cc`. O arquivo [`app.yml`](https://cloud.google.com/appengine/docs/standard/python3/config/appref?hl=pt-br) informa a versão de Python.
