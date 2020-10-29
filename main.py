@@ -12,7 +12,7 @@ from pytz import timezone
 
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
-CORS(app)
+cors = CORS(app, resources={r"/*": {"origins": "https://arc20201.boidacarapreta.cc"}})
 
 # Se houver um arquivo .env, que é comum em ambientes de desenvolvimento
 # como IDEs locais (a exemplo de Visual Studio Code), carregar os valores
