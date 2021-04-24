@@ -4,7 +4,7 @@ Ambiente de prototipação com [Gitpod](https://gitpod.io).
 
 ## Passo zero: ler (e escutar) o livro/jogo/apostila da disciplina
 
-A documentação completa está em https://arc20201.boidacarapreta.cc.
+A documentação completa está em https://boidacarapreta.github.io/arc20201/.
 
 ## Passo um: bifurcar este repositório
 
