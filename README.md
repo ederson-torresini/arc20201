@@ -4,7 +4,7 @@ Ambiente de prototipação com [Gitpod](https://gitpod.io).
 
 ## Passo zero: ler (e escutar) o livro/jogo/apostila da disciplina
 
-A documentação completa está em https://boidacarapreta.github.io/arc20201/.
+A documentação completa está em ~~https://boidacarapreta.github.io/arc20201/~~ https://ederson-torresini.github.io/arc20201/.
 
 ## Passo um: bifurcar este repositório
 
@@ -38,7 +38,7 @@ Uma vez criadas as variáveis de ambiente, o Gitpod rodará o cliente em Python 
 
 Este repositório está preparado para rodar o código em modo depuração, com o objetivo de facilitar o desenvolvimento. Basta adicionar a URL deste respositório a `https://gitpod.io/#` para abrir no Gitpod.
 
-Por exemplo, o repositório modelo `boidacarapreta/arc20201` fica assim: `https://gitpod.io/#https://github.com/boidacarapreta/arc20201` (com dois `https` mesmo).
+Por exemplo, o repositório modelo `ederson-torresini/arc20201` fica assim: `https://gitpod.io/#https://github.com/ederson-torresini/arc20201` (com dois `https` mesmo).
 
 ## Passo quatro: autorizar o Gitpod a escrever no repositório
 
