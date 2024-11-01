@@ -1,5 +1,5 @@
 Flask==1.1.2
-Flask-Cors==3.0.9
+Flask-Cors==4.0.2
 influxdb-client==1.7.0
 python-dotenv==0.13.0
 requests==2.24.0
